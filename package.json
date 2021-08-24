@@ -1,0 +1,46 @@
+{
+  "name": "task-runner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init-project": "npm install && npm-run-all init:*",
+    "init:dirs": "mkdirp css images js sass/components sass/pages sass/sections vendor",
+    "init:files": "touch js/script.js sass/_layout.scss sass/_mixins.scss sass/_normalize.scss sass/_variables.scss sass/style.scss README.md index.html styleguide.html",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "test": "npm-run-all test:*",
+    "test:html": "html-validate *.html",
+    "test:js": "eslint js/",
+    "test:scss": "stylelint sass/",
+    "build": "npm-run-all build:* test",
+    "build:sass": "node-sass --output-style compact -o css sass",
+    "build:autoprefixer": "postcss css/*.css --use autoprefixer -d css",
+    "build-dev": "run-p build-dev:sass build:autoprefixer",
+    "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
+    "watch": "npm-run-all build:* build-dev -p watch:*",
+    "watch:sass-prefixer": "onchange sass/*.scss -- npm run build-dev",
+    "watch:browsersync": "browser-sync start --server --files \"css/*.css\" \"*.html\" \"js/*.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.2.4",
+    "browser-sync": "^2.26.14",
+    "eslint": "^7.28.0",
+    "html-validate": "^4.12.0",
+    "mkdirp": "^1.0.4",
+    "node-sass": "^6.0.0",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1",
+    "stylelint": "^13.13.1",
+    "stylelint-scss": "^3.19.0",
+    "x-default-browser": "^0.4.0"
+  },
+  "dependencies": {
+    "meow": "^10.0.1",
+    "trim-newlines": "^4.0.1"
+  }
+}
