@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-main;
+  font-size: $font-size-2;
+  line-height: 1.5;
+  font-weight: $font-normal;
+  color: $color-gray-5;
+}
