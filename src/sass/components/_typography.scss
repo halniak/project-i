@@ -2,7 +2,8 @@
   color: $color-gray-4;
   text-transform: uppercase;
   font-size: $font-size-3;
-  font-weight: $font-normal;
+  border-bottom: 1px solid $color-gray-3;
+  line-height: $font-size-3;
 }
 
 .section-header {
@@ -17,9 +18,7 @@
   font-weight: $font-normal;
 }
 
-[class*='icon-']:before {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.topmenu__section__logo {
+  font-family: 'Covered By Your Grace';
+  font-size: $basesize * 3;
 }

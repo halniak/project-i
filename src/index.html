@@ -9,12 +9,181 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro">
   <link rel="stylesheet" href="vendor/icons/css/Glyphter.css">
+  <link rel="stylesheet" href="vendor/bootstrap-grid.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+  <div class="container-fluid padding-0 dashboard">
+    <section class="topmenu">
+      <div id="sidebar-toggler" class="topmenu__section">
+        <div class="topmenu__section__logo">
+          Just do IT
+        </div>
+        <div id="hamburger-button" class="topmenu__section__icon">
+          <label for="check">
+            <input type="checkbox" id="check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+      </div>
+      <div class="topmenu__section topmenu__fill"></div>
+      <nav class="topmenu__wrapper">
+        <div class="topmenu__section">
+          <div class="topmenu__section__icon">
+            <i class="icon-wallet"></i>
+          </div>
+          <div class="topmenu__section__text">
+            <span class="section-header">$ 15000,00</span>
+          </div>
+          <div class="topmenu__section__icon" type="button">
+            <i class="icon-arrow-down-small"></i>
+          </div>
+        </div>
+        <div class="topmenu__section">
+          <div class="topmenu__section__icon" type="button">
+            <i class="icon-notification"></i>
+            <div class="icon-notification__badge"></div>
+          </div>
+        </div>
+        <div class="topmenu__section">
+          <div class="topmenu__section__icon">
+            <i class="icon-login"></i>
+          </div>
+          <div class="topmenu__section__text">
+            <span class="text">Anna Magdalena Lewandowska</span>
+          </div>
+        </div>
+        <div class="topmenu__section">
+          <div class="topmenu__section__icon" type="button">
+            <i class="icon-quit"></i>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <div class="row margin-0">
+      <div id="sidebar-wrapper" class="padding-lr">
+        <nav class="sidebar">
+          <div class="sidebar__btn" type="button">
+            <div class="sidebar__btn__icon" type="button">
+              <i class="icon-general"></i>
+            </div>
+            <div class="sidebar__btn__text">General</div>
+          </div>
+          <div class="sidebar__btn" type="button">
+            <div class="sidebar__btn__icon" type="button">
+              <i class="icon-details"></i>
+            </div>
+            <div class="sidebar__btn__text">Details</div>
+          </div>
+          <div class="sidebar__btn" type="button">
+            <div class="sidebar__btn__icon" type="button">
+              <i class="icon-links"></i>
+            </div>
+            <div class="sidebar__btn__text">Links</div>
+          </div>
+          <div class="sidebar__btn" type="button">
+            <div class="sidebar__btn__icon" type="button">
+              <i class="icon-banners"></i>
+            </div>
+            <div class="sidebar__btn__text">Banners</div>
+          </div>
+          <div class="sidebar__btn" type="button">
+            <div class="sidebar__btn__icon" type="button">
+              <i class="icon-personaldata"></i>
+            </div>
+            <div class="sidebar__btn__text">Personal data</div>
+          </div>
+          <div class="sidebar__btn" type="button">
+            <div class="sidebar__btn__icon" type="button">
+              <i class="icon-payout"></i>
+            </div>
+            <div class="sidebar__btn__text">Payout</div>
+          </div>
+          <div class="sidebar__btn" type="button">
+            <div class="sidebar__btn__icon" type="button">
+              <i class="icon-postback"></i>
+            </div>
+            <div class="sidebar__btn__text">Postback</div>
+          </div>
+        </nav>
+      </div>
+      <div id="general-wrapper" class="col">
+        <div class="row margin-tb section">
+          <section id="general-statistic">
+            <div class="page-header padding-tb padding-lr">
+              general statistic
+            </div>
+            <!-- <div class="row row-center margin-tb-lg">
+              <div class="btn calendar">
+                <div class="row">
+                  <div class="col">
+                    <span class="section-header">27.08.2021</span>
+                  </div>
+                  <div class="col">
+                    <span class="section-header">26.09.2021</span>
+                  </div>
+                </div>
+                <div class="calendar__icon" type="button">
+                  <i class="icon-calendar"></i>
+                </div>
+              </div>
+              <div id="btn-refresh" class="btn btn-orange">
+                <i class="icon-refresh"></i>
+              </div>
+            </div> -->
+          </section>
+        </div>
+        <div class="row margin-tb section">
+          <section id="links">
+            <div class="page-header padding-tb padding-lr">
+              links
+            </div>
+            <button class="btn btn-orange margin-tb" type="button">
+              + add new
+            </button>
+            <div class="col-8 margin-tb">
+              <div class="table-links">
+                <div class="row">
+                  <div class="col-4">
+                    <span class="section-header">Link 1</span>
+                  </div>
+                  <div class="col-5">
+                    <a class="link">www.link.com</a>
+                  </div>
+                  <div class="table-links__icon">
+                    <a href="#" class="icon-links" aria-label="lorem ipsum"></a>
+                  </div>
+                  <div class="table-links__icon">
+                    <a href="#" class="icon-trash" aria-label="lorem ipsum"></a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <span class="section-header">Link 2</span>
+                  </div>
+                  <div class="col-5">
+                    <a class="link">www.sony.com</a>
+                  </div>
+                  <div class="table-links__icon">
+                    <a href="#" class="icon-links" aria-label="lorem ipsum"></a>
+                  </div>
+                  <div class="table-links__icon">
+                    <a href="#" class="icon-trash" aria-label="lorem ipsum"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="js/script.js" async defer></script>
 </body>
 

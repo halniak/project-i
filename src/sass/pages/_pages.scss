@@ -1,0 +1,11 @@
+.dashboard {
+  padding-top: 6 * $basesize;
+}
+
+@media (max-width: 767px) {
+  $basesize: 7px;
+
+  .dashboard {
+    padding-top: 6 * $basesize;
+  }
+}

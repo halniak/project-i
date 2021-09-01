@@ -1,0 +1,17 @@
+.link {
+  text-decoration: none;
+  color: $color-blue-1;
+
+  &:hover {
+    cursor: pointer;
+    color: $color-orange-1;
+  }
+}
+
+.link-lg {
+  font-size: $font-size-3;
+}
+
+.link-sm {
+  font-size: $font-size-1;
+}

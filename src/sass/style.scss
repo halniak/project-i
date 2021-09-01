@@ -6,8 +6,14 @@
 @import 'global';
 
 /* Components */
-@import 'components/components';
+@import 'components/buttons';
+@import 'components/menuButton';
+@import 'components/lists';
+@import 'components/links';
 @import 'components/typography';
+
 /* Sections */
+@import 'sections/sections';
 
 /* Pages */
+@import 'pages/pages';

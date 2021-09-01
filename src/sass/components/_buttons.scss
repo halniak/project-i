@@ -1,0 +1,87 @@
+.btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.3em;
+  transition: $transition;
+  color: #ffffff;
+  font-size: $font-size-3;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.icon-notification__badge {
+  //visibility: hidden;
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background-color: $color-orange-2;
+  top: 30%;
+  left: 50%;
+}
+
+.btn-gray {
+  background-color: $color-gray-4;
+  border-color: $color-gray-4;
+
+  &:hover {
+    background-color: $color-gray-3;
+    border-color: $color-gray-3;
+  }
+}
+
+.btn-orange {
+  background-color: $color-orange-2;
+  border-color: $color-orange-2;
+
+  &:hover {
+    background-color: $color-orange-1;
+    border-color: $color-orange-1;
+  }
+}
+
+.btn-disabled {
+  background-color: $color-gray-2;
+  border-color: $color-gray-2;
+
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
+.btn-tab {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: $color-blue-1;
+  padding-left: 60px;
+
+  .tab-dot {
+    background-color: $color-orange-2;
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-42px, -50%);
+  }
+
+  &--active {
+    color: $color-gray-4;
+    background-color: $color-gray-2;
+    border-color: $color-gray-2;
+  }
+}
+
+#btn-refresh {
+  color: $color-gray-5;
+  aspect-ratio: 1;
+  height: 100%;
+  margin-left: 1em;
+}

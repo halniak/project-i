@@ -1,0 +1,44 @@
+@mixin menu($basesize) {
+  &__section,
+  &__btn {
+    position: relative;
+
+    &__icon,
+    &__text,
+    &__logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    &__icon > * {
+      font-size: 2 * $basesize;
+    }
+
+    &__text {
+      max-width: $basesize * 18;
+
+      > .text {
+        font-size: 2 * $basesize - 3px;
+        padding: 6px;
+      }
+
+      > .section-header {
+        font-size: 2 * $basesize + 1px;
+        padding: 3px;
+      }
+    }
+  }
+}
+
+@mixin topmenu($basesize) {
+  height: 6 * $basesize;
+  width: 100%;
+}
+
+@mixin sidebar($basesize) {
+  width: 24 * $basesize;
+  background-color: $color-gray-5;
+  border: 1px solid $color-gray-5;
+}
