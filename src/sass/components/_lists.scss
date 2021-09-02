@@ -9,7 +9,7 @@ table {
 
 .table-general {
   td {
-    border-bottom: 1px solid $color-gray-2;
+    border-bottom: 1px solid $color-primary-2;
     padding: 20px 0 5px;
   }
 }
@@ -19,33 +19,33 @@ table {
     opacity: 0;
   }
 
-  &__icon {
+  &__btn {
     width: 50px;
     text-align: end;
     position: relative;
   }
 
-  &__icon:hover [class*='icon-']:before {
+  &__btn:hover [class*='icon-']:before {
     font-weight: $font-semibold;
   }
 
   .row:hover {
-    background-color: $color-gray-2;
+    background-color: $color-primary-2;
     transition: $transition;
 
     [class*='icon-']:before {
       opacity: 1;
       transition: $transition;
-      color: $color-gray-5;
+      color: $color-primary-5;
     }
   }
 
   > * {
-    border-top: 1px solid $color-gray-3;
+    border-top: 1px solid $color-primary-3;
     padding: 15px 0;
   }
 
   > :last-child {
-    border-bottom: 1px solid $color-gray-3;
+    border-bottom: 1px solid $color-primary-3;
   }
 }

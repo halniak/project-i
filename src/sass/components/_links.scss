@@ -1,10 +1,10 @@
 .link {
   text-decoration: none;
-  color: $color-blue-1;
+  color: $color-ternary;
 
   &:hover {
     cursor: pointer;
-    color: $color-orange-1;
+    color: $color-secondary;
   }
 }
 

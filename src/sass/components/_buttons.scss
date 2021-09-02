@@ -1,9 +1,9 @@
-.btn {
+%btn {
   display: inline-block;
-  padding: 0.5em 1em;
+  padding: 0.5rem 1rem;
   background-color: transparent;
   border: 1px solid transparent;
-  border-radius: 0.3em;
+  border-radius: 0.3rem;
   transition: $transition;
   color: #ffffff;
   font-size: $font-size-3;
@@ -16,40 +16,32 @@
   }
 }
 
-.icon-notification__badge {
-  //visibility: hidden;
-  position: absolute;
-  width: 0.5em;
-  height: 0.5em;
-  border-radius: 50%;
-  background-color: $color-orange-2;
-  top: 30%;
-  left: 50%;
-}
-
-.btn-gray {
-  background-color: $color-gray-4;
-  border-color: $color-gray-4;
+.btn-primary {
+  @extend %btn;
+  background-color: $color-primary-4;
+  border-color: $color-primary-4;
 
   &:hover {
-    background-color: $color-gray-3;
-    border-color: $color-gray-3;
+    background-color: $color-primary-3;
+    border-color: $color-primary-3;
   }
 }
 
-.btn-orange {
-  background-color: $color-orange-2;
-  border-color: $color-orange-2;
+.btn-secondary {
+  @extend %btn;
+  background-color: $color-secondary-active;
+  border-color: $color-secondary-active;
 
   &:hover {
-    background-color: $color-orange-1;
-    border-color: $color-orange-1;
+    background-color: $color-secondary;
+    border-color: $color-secondary;
   }
 }
 
 .btn-disabled {
-  background-color: $color-gray-2;
-  border-color: $color-gray-2;
+  @extend %btn;
+  background-color: $color-primary-2;
+  border-color: $color-primary-2;
 
   &:hover {
     cursor: not-allowed;
@@ -57,31 +49,32 @@
 }
 
 .btn-tab {
+  @extend %btn;
   background-color: #ffffff;
   border-color: #ffffff;
-  color: $color-blue-1;
-  padding-left: 60px;
+  color: $color-ternary;
+  padding-left: 5rem;
 
-  .tab-dot {
-    background-color: $color-orange-2;
-    width: 22px;
-    height: 22px;
+  &__dot {
+    background-color: $color-ternary;
+    width: 1.25rem;
+    height: 1.25rem;
     border-radius: 100%;
     position: absolute;
     top: 50%;
-    transform: translate(-42px, -50%);
+    transform: translate(-2.6rem, -50%);
   }
 
   &--active {
-    color: $color-gray-4;
-    background-color: $color-gray-2;
-    border-color: $color-gray-2;
+    color: $color-primary-4;
+    background-color: $color-primary-2;
+    border-color: $color-primary-2;
   }
 }
 
 #btn-refresh {
-  color: $color-gray-5;
+  color: $color-primary-5;
   aspect-ratio: 1;
   height: 100%;
-  margin-left: 1em;
+  margin-left: 1rem;
 }

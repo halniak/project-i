@@ -16,7 +16,7 @@
    font-weight: normal;
    line-height: 1;
    -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale
+   -moz-osx-font-smoothing: primaryscale
 }
 .icon-arrow-down:before{content:'\0041';}
 .icon-arrow-down-small:before{content:'\0042';}

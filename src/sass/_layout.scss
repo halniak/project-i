@@ -1,14 +1,10 @@
 .margin-tb {
-  margin: 15px auto;
-}
-
-.margin-tb-lg {
-  margin: 45px 0;
+  margin: 2 * $basesize auto;
 }
 
 .margin-lr {
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 2 * $basesize;
+  margin-right: 2 * $basesize;
 }
 
 .margin-0 {
@@ -16,8 +12,8 @@
 }
 
 .padding-tb {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 2 * $basesize;
+  padding-bottom: 2 * $basesize;
 }
 
 .padding-0 {
@@ -25,8 +21,8 @@
 }
 
 .padding-lr {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 2 * $basesize;
+  padding-right: 2 * $basesize;
 }
 
 .row-end {

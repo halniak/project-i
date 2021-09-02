@@ -1,9 +1,12 @@
 @mixin menu($basesize) {
-  &__section,
+  display: flex;
+  position: fixed;
+
+  &__elem,
   &__btn {
     position: relative;
 
-    &__icon,
+    &__btn,
     &__text,
     &__logo {
       display: flex;
@@ -12,7 +15,7 @@
       position: relative;
     }
 
-    &__icon > * {
+    &__btn > * {
       font-size: 2 * $basesize;
     }
 
@@ -20,12 +23,12 @@
       max-width: $basesize * 18;
 
       > .text {
-        font-size: 2 * $basesize - 3px;
+        font-size: 1.6 * $basesize;
         padding: 6px;
       }
 
       > .section-header {
-        font-size: 2 * $basesize + 1px;
+        font-size: 2.2 * $basesize;
         padding: 3px;
       }
     }
@@ -34,11 +37,10 @@
 
 @mixin topmenu($basesize) {
   height: 6 * $basesize;
-  width: 100%;
 }
 
 @mixin sidebar($basesize) {
   width: 24 * $basesize;
-  background-color: $color-gray-5;
-  border: 1px solid $color-gray-5;
+  background-color: $color-primary-5;
+  border: 1px solid $color-primary-5;
 }

@@ -1,0 +1,16 @@
+.notification-badge {
+  &--active {
+    position: absolute;
+    visibility: visible;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: $color-secondary-active;
+    top: 30%;
+    left: 50%;
+  }
+
+  &--disabled {
+    visibility: hidden;
+  }
+}

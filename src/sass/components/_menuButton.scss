@@ -6,19 +6,21 @@ body {
   padding: 0;
 }
 
-#hamburger-button {
+.sidebar__toggler__btn {
+  $scale-factor: 0.6 * $basesize / 1rem;
+  transform: scale($scale-factor);
   label {
     display: flex;
     flex-direction: column;
-    width: calc(70px / 3);
+    width: 70px;
     cursor: pointer;
   }
 
   label span {
     background: #fff;
-    border-radius: calc(10px / 3);
-    height: calc(7px / 3);
-    margin: calc(7px / 3) 0;
+    border-radius: 10px;
+    height: 7px;
+    margin: 7px 0;
     transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   }
 
@@ -40,7 +42,7 @@ body {
 
   input[type='checkbox']:checked ~ span:nth-of-type(1) {
     transform-origin: bottom;
-    transform: rotatez(45deg) translate(calc(8px / 3), 0px);
+    transform: rotatez(45deg) translate(8px, 0px);
   }
 
   input[type='checkbox']:checked ~ span:nth-of-type(2) {
@@ -51,6 +53,6 @@ body {
   input[type='checkbox']:checked ~ span:nth-of-type(3) {
     transform-origin: bottom;
     width: 50%;
-    transform: translate(calc(30px / 3), calc(-11px / 3)) rotatez(45deg);
+    transform: translate(30px, -11px) rotatez(45deg);
   }
 }
