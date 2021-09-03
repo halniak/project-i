@@ -1,19 +1,24 @@
 .main {
-  padding-left: 24 * $basesize + 1rem;
+  padding-left: 1rem;
+  transition: $transition;
 
   &__elem {
     background-color: white;
     border-radius: 0.25rem;
     border: 1px solid $color-primary-3;
   }
+
+  &.active {
+    padding-left: 24 * $basesize + 1rem;
+    transition: $transition;
+  }
 }
 
-.topmenu {
+.menu {
   @include menu($basesize);
 
   width: 100%;
   height: 6 * $basesize;
-  //justify-content: space-between;
   top: 0;
   background-color: rgba(0, 0, 0, 0.05);
   z-index: 2;
@@ -27,24 +32,27 @@
     height: 100%;
     border-left: 1px solid $color-primary-3;
     border-bottom: 1px solid $color-primary-3;
-    display: flex;
     justify-content: center;
 
     &__btn {
       aspect-ratio: 1;
     }
 
-    &__text > .text {
-      color: $color-ternary;
-      font-weight: $font-semibold;
-      margin-right: 1.5rem;
+    &__text {
+      max-width: $basesize * 18;
+
+      > .text {
+        color: $color-ternary;
+        font-weight: $font-semibold;
+        margin-right: 1.5rem;
+      }
     }
 
     &:last-of-type {
       border-right: 1px solid $color-primary-3;
     }
 
-    &:hover:not(.topmenu__fill) {
+    &:hover:not(.menu__fill) {
       background-color: $color-primary-2;
     }
 
@@ -73,17 +81,16 @@
 
 .sidebar {
   @include menu($basesize);
+  @include sidebar($basesize);
 
-  width: 24 * $basesize;
   height: 100vh;
   flex-direction: column;
   z-index: 2;
-  background-color: $color-primary-5;
-  border: 1px solid $color-primary-5;
+  left: -24 * $basesize;
+  transition: $transition;
 
   &__toggler {
     @include sidebar($basesize);
-    justify-content: space-evenly;
     height: 6 * $basesize;
     position: fixed;
     display: flex;
@@ -92,6 +99,7 @@
     z-index: 3;
     top: 0;
     padding-left: 2 * $basesize;
+    cursor: pointer;
 
     &__logo {
       font-family: 'Covered By Your Grace';
@@ -106,7 +114,6 @@
 
   &__elem {
     height: 6 * $basesize;
-    display: flex;
 
     &__btn {
       width: 4 * $basesize;
@@ -146,7 +153,6 @@
     height: 100%;
     margin-left: -1rem;
     margin-right: -2rem;
-    //border-left: 0.3rem solid transparent;
     transition: $transition;
   }
 
@@ -154,6 +160,11 @@
     cursor: pointer;
     background: rgba(255, 255, 255, 0.1);
     border-left: 0.3rem solid $color-secondary;
+  }
+
+  &.active {
+    left: 0;
+    transition: $transition;
   }
 }
 
@@ -201,20 +212,6 @@
   cursor: initial;
 }
 
-#topmenu-wrapper {
-  background-color: white;
-  height: max-content;
-}
-
-#sidebar-wrapper {
-  @include sidebar($basesize);
-  position: fixed;
-}
-
-#general-wrapper {
-  margin-left: $basesize * 24;
-}
-
 #general-statistic {
   width: 100%;
   height: 70vh;
@@ -225,26 +222,44 @@
   height: 70vh;
 }
 
-/* @media (max-width: 767px) {
-  $basesize: 0.42rem;
+@media (max-width: 767px) {
+  $basesize: 0.44rem;
 
-  .topmenu {
-    @include menu($basesize);
+  .main.active {
+    padding-left: 24 * $basesize + 1rem;
+  }
 
-    #sidebar-toggler {
-      @include sidebar($basesize);
+  .menu {
+    height: 6 * $basesize;
+
+    &__elem__text {
+      max-width: $basesize * 18;
     }
   }
 
   .sidebar {
-    @include menu($basesize);
-  }
+    width: 24 * $basesize;
 
-  #sidebar-wrapper {
-    @include sidebar($basesize);
-  }
+    &__toggler {
+      width: 24 * $basesize;
+      height: 6 * $basesize;
+      padding-left: 2 * $basesize;
 
-  #general-wrapper {
-    margin-left: $basesize * 24;
+      &__logo {
+        font-size: $basesize * 3;
+      }
+
+      &__btn label {
+        transform: scale(0.6 * $basesize / 1rem);
+      }
+    }
+
+    &__elem {
+      height: 6 * $basesize;
+
+      &__btn {
+        width: 4 * $basesize;
+      }
+    }
   }
-} */
+}

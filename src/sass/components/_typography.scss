@@ -12,8 +12,41 @@
   font-weight: $font-semibold;
 }
 
+.text-btn {
+  font-size: $font-size-2;
+}
+
 .text {
   color: $color-primary-5;
   font-size: $font-size-1;
   font-weight: $font-normal;
+}
+
+[class*='icon-'] {
+  font-size: $font-size-2;
+}
+
+@media (max-width: 767px) {
+  $basesize: 0.44rem;
+  $font-size-1: 1.6 * $basesize;
+  $font-size-2: 2 * $basesize;
+  $font-size-3: 2.4 * $basesize;
+
+  .page-header {
+    font-size: $font-size-3;
+    line-height: $font-size-3;
+  }
+
+  .section-header,
+  .text-btn {
+    font-size: $font-size-2;
+  }
+
+  .text {
+    font-size: $font-size-1;
+  }
+
+  [class*='icon-'] {
+    font-size: $font-size-2;
+  }
 }

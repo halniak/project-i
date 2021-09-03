@@ -2,41 +2,17 @@
   display: flex;
   position: fixed;
 
-  &__elem,
-  &__btn {
+  &__elem {
+    display: flex;
     position: relative;
 
     &__btn,
-    &__text,
-    &__logo {
+    &__text {
       display: flex;
-      justify-content: center;
       align-items: center;
       position: relative;
     }
-
-    &__btn > * {
-      font-size: 2 * $basesize;
-    }
-
-    &__text {
-      max-width: $basesize * 18;
-
-      > .text {
-        font-size: 1.6 * $basesize;
-        padding: 6px;
-      }
-
-      > .section-header {
-        font-size: 2.2 * $basesize;
-        padding: 3px;
-      }
-    }
   }
-}
-
-@mixin topmenu($basesize) {
-  height: 6 * $basesize;
 }
 
 @mixin sidebar($basesize) {

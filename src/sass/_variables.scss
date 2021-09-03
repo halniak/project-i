@@ -1,3 +1,5 @@
+$basesize: 0.5rem;
+
 /* Colors */
 $color-ternary: #56819f;
 $color-primary-1: #cfcf69;
@@ -15,9 +17,9 @@ $color-negative-active: #de5252;
 $color-warning: #ff0000;
 
 /* Font-sizes */
-$font-size-1: 0.8rem;
-$font-size-2: 1rem;
-$font-size-3: 1.2rem;
+$font-size-1: 1.6 * $basesize;
+$font-size-2: 2 * $basesize;
+$font-size-3: 2.4 * $basesize;
 
 /* Fonts */
 $font-main: 'Source Sans Pro', sans-serif;
@@ -30,4 +32,3 @@ $font-bold: 700;
 
 /* Other */
 $transition: all 0.3s;
-$basesize: 0.5rem;

@@ -7,12 +7,11 @@ body {
 }
 
 .sidebar__toggler__btn {
-  $scale-factor: 0.6 * $basesize / 1rem;
-  transform: scale($scale-factor);
   label {
     display: flex;
     flex-direction: column;
-    width: 70px;
+    width: 8 * $basesize;
+    transform: scale(0.6 * $basesize / 1rem);
     cursor: pointer;
   }
 
