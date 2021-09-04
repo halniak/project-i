@@ -20,6 +20,10 @@
   color: $color-primary-5;
   font-size: $font-size-1;
   font-weight: $font-normal;
+
+  &-sm {
+    font-size: 1.3 * $basesize;
+  }
 }
 
 [class*='icon-'] {
@@ -35,6 +39,7 @@
   .page-header {
     font-size: $font-size-3;
     line-height: $font-size-3;
+    text-align: right;
   }
 
   .section-header,

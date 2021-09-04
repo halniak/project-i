@@ -6,8 +6,9 @@
     display: flex;
     position: relative;
 
-    &__btn,
-    &__text {
+    &__icon,
+    &__text,
+    &__btn {
       display: flex;
       align-items: center;
       position: relative;
@@ -18,5 +19,4 @@
 @mixin sidebar($basesize) {
   width: 24 * $basesize;
   background-color: $color-primary-5;
-  border: 1px solid $color-primary-5;
 }

@@ -18,12 +18,12 @@
 
 <body>
   <div class="container-fluid padding-0 dashboard">
-    <div class="row margin-0">
+    <div id="header" class="row margin-0">
       <div class="sidebar__toggler">
         <div class="sidebar__toggler__logo">
           Just do IT
         </div>
-        <div class="sidebar__toggler__btn">
+        <div class="sidebar__toggler__icon">
           <label for="check">
             <input type="checkbox" id="check">
             <span></span>
@@ -32,47 +32,12 @@
           </label>
         </div>
       </div>
-      <section class="menu">
-        <div class="menu__elem menu__fill"></div>
-        <nav class="menu__wrapper">
-          <div class="menu__elem">
-            <div class="menu__elem__btn">
-              <i class="icon-wallet"></i>
-            </div>
-            <div class="menu__elem__text">
-              <span class="section-header">$ 15000,00</span>
-            </div>
-            <div class="menu__elem__btn" type="button">
-              <i class="icon-arrow-down-small"></i>
-            </div>
-          </div>
-          <div class="menu__elem">
-            <div class="menu__elem__btn" type="button">
-              <i class="icon-notification"></i>
-              <div class="icon-notification__badge"></div>
-            </div>
-          </div>
-          <div class="menu__elem">
-            <div class="menu__elem__btn">
-              <i class="icon-login"></i>
-            </div>
-            <div class="menu__elem__text">
-              <span class="text">Anna Lewandowska</span>
-            </div>
-          </div>
-          <div class="menu__elem">
-            <div class="menu__elem__btn" type="button">
-              <i class="icon-quit"></i>
-            </div>
-          </div>
-        </nav>
-      </section>
     </div>
 
-    <div class="row margin-0">
-      <nav class="padding-lr sidebar">
+    <div class="row margin-0 relative">
+      <nav class="padding-lr sidebar active">
         <div class="sidebar__elem" type="button">
-          <div class="sidebar__elem__btn" type="button">
+          <div class="sidebar__elem__icon" type="button">
             <i class="icon-general"></i>
           </div>
           <div class="text-btn sidebar__elem__text">General
@@ -80,101 +45,125 @@
           </div>
         </div>
         <div class="sidebar__elem" type="button">
-          <div class="sidebar__elem__btn" type="button">
+          <div class="sidebar__elem__icon" type="button">
             <i class="icon-details"></i>
           </div>
           <div class="text-btn sidebar__elem__text">Details</div>
         </div>
         <div class="sidebar__elem" type="button">
-          <div class="sidebar__elem__btn" type="button">
+          <div class="sidebar__elem__icon" type="button">
             <i class="icon-links"></i>
           </div>
           <div class="text-btn sidebar__elem__text">Links</div>
         </div>
         <div class="sidebar__elem" type="button">
-          <div class="sidebar__elem__btn" type="button">
+          <div class="sidebar__elem__icon" type="button">
             <i class="icon-banners"></i>
           </div>
           <div class="text-btn sidebar__elem__text">Banners</div>
         </div>
         <div class="sidebar__elem" type="button">
-          <div class="sidebar__elem__btn" type="button">
+          <div class="sidebar__elem__icon" type="button">
             <i class="icon-personaldata"></i>
           </div>
           <div class="text-btn sidebar__elem__text">Personal data</div>
         </div>
         <div class="sidebar__elem" type="button">
-          <div class="sidebar__elem__btn" type="button">
+          <div class="sidebar__elem__icon" type="button">
             <i class="icon-payout"></i>
           </div>
           <div class="text-btn sidebar__elem__text">Payout</div>
         </div>
-        <div class="sidebar__elem" type="button">
-          <div class="sidebar__elem__btn" type="button">
+        <div class="sidebar__elem sidebar__elem__border" type="button">
+          <div class="sidebar__elem__icon" type="button">
             <i class="icon-postback"></i>
           </div>
           <div class="text-btn sidebar__elem__text">Postback</div>
         </div>
-        <div class="sidebar__elem" type="button">
-          <div class="menu__elem__btn sidebar__elem__btn" type="button">
-            <i class="icon-wallet"></i>
+        <div id="manager" class="sidebar__elem sidebar__elem__border" type="button">
+          <div class="text-btn sidebar__elem__text">Your manager</div>
+        </div>
+        <div id="menu" class="menu">
+          <div class="menu__elem menu__fill"></div>
+          <div class="menu__elem" type="button">
+            <div class="menu__elem__icon">
+              <i class="icon-wallet"></i>
+            </div>
+            <div class="text-btn menu__elem__text">$ 15000,00</div>
+            <div id="wallet-toggler" class="menu__elem__icon">
+              <i class="icon-arrow-down-small"></i>
+            </div>
           </div>
-          <div class="menu__elem__text text-btn sidebar__elem__text">$ 15000,00</div>
-          <div class="menu__elem__btn sidebar__elem__btn" type="button">
-            <i class="icon-arrow-down-small"></i>
+          <div class="menu__elem" type="button">
+            <div class="menu__elem__icon">
+              <i class="icon-login"></i>
+            </div>
+            <span class="menu__elem__text text">
+              John Smith
+            </span>
+            <div id="notification-toggler" class="menu__elem__icon" type="button">
+              <i class="icon-notification"></i>
+              <div class="icon-notification__badge active"></div>
+            </div>
+          </div>
+          <div class="menu__elem" type="button">
+            <div class="menu__elem__icon" type="button">
+              <i class="icon-quit"></i>
+            </div>
+            <div id="quit-label" class="text-btn menu__elem__text"></div>
           </div>
         </div>
       </nav>
-      <div class="col main">
-        <div class="row margin-tb main__elem">
-          <section id="general-statistic">
-            <div class="page-header padding-tb padding-lr">
-              general statistic
-            </div>
-          </section>
-        </div>
-        <div class="row margin-tb main__elem">
-          <section id="links">
-            <div class="page-header padding-tb padding-lr">
-              links
-            </div>
-            <button class="btn btn-secondary margin-tb" type="button">
-              + add new
-            </button>
-            <div class="col-8 margin-tb">
-              <div class="table-links">
-                <div class="row">
-                  <div class="col-4">
-                    <span class="section-header">Link 1</span>
-                  </div>
-                  <div class="col-5">
-                    <a class="link">www.link.com</a>
-                  </div>
-                  <div class="table-links__btn">
-                    <a href="#" class="icon-links" aria-label="lorem ipsum"></a>
-                  </div>
-                  <div class="table-links__btn">
-                    <a href="#" class="icon-trash" aria-label="lorem ipsum"></a>
-                  </div>
+    </div>
+    <div class="col main active">
+      <div class="row margin-tb main__elem">
+        <section id="general-statistic">
+          <div class="page-header padding-tb padding-lr">
+            general statistic
+          </div>
+        </section>
+      </div>
+      <div class="row margin-tb main__elem">
+        <section id="links">
+          <div class="page-header padding-tb padding-lr">
+            links
+          </div>
+          <button class="btn btn-secondary margin-tb" type="button">
+            + add new
+          </button>
+          <div class="col-8 margin-tb">
+            <div class="table-links">
+              <div class="row">
+                <div class="col-4">
+                  <span class="section-header">Link 1</span>
                 </div>
-                <div class="row">
-                  <div class="col-4">
-                    <span class="section-header">Link 2</span>
-                  </div>
-                  <div class="col-5">
-                    <a class="link">www.sony.com</a>
-                  </div>
-                  <div class="table-links__btn">
-                    <a href="#" class="icon-links" aria-label="lorem ipsum"></a>
-                  </div>
-                  <div class="table-links__btn">
-                    <a href="#" class="icon-trash" aria-label="lorem ipsum"></a>
-                  </div>
+                <div class="col-5">
+                  <a class="link">www.link.com</a>
+                </div>
+                <div class="table-links__btn">
+                  <a href="#" class="icon-links" aria-label="lorem ipsum"></a>
+                </div>
+                <div class="table-links__btn">
+                  <a href="#" class="icon-trash" aria-label="lorem ipsum"></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <span class="section-header">Link 2</span>
+                </div>
+                <div class="col-5">
+                  <a class="link">www.sony.com</a>
+                </div>
+                <div class="table-links__btn">
+                  <a href="#" class="icon-links" aria-label="lorem ipsum"></a>
+                </div>
+                <div class="table-links__btn">
+                  <a href="#" class="icon-trash" aria-label="lorem ipsum"></a>
                 </div>
               </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
     </div>
   </div>

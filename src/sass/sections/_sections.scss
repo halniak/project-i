@@ -9,74 +9,8 @@
   }
 
   &.active {
-    padding-left: 24 * $basesize + 1rem;
     transition: $transition;
   }
-}
-
-.menu {
-  @include menu($basesize);
-
-  width: 100%;
-  height: 6 * $basesize;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.05);
-  z-index: 2;
-
-  &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  &__elem {
-    height: 100%;
-    border-left: 1px solid $color-primary-3;
-    border-bottom: 1px solid $color-primary-3;
-    justify-content: center;
-
-    &__btn {
-      aspect-ratio: 1;
-    }
-
-    &__text {
-      max-width: $basesize * 18;
-
-      > .text {
-        color: $color-ternary;
-        font-weight: $font-semibold;
-        margin-right: 1.5rem;
-      }
-    }
-
-    &:last-of-type {
-      border-right: 1px solid $color-primary-3;
-    }
-
-    &:hover:not(.menu__fill) {
-      background-color: $color-primary-2;
-    }
-
-    &__btn[type='button']:hover {
-      cursor: pointer;
-
-      [class*='icon-']:before {
-        font-weight: $font-semibold;
-      }
-    }
-  }
-
-  &__fill {
-    flex-grow: 1;
-  }
-}
-
-#hamburger-button {
-  margin: 0.25rem;
-}
-
-#hamburger-button:hover {
-  border: 1px solid $color-primary-2;
-  border-radius: 0.375rem;
 }
 
 .sidebar {
@@ -96,7 +30,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    z-index: 3;
+    z-index: 4;
     top: 0;
     padding-left: 2 * $basesize;
     cursor: pointer;
@@ -115,8 +49,16 @@
   &__elem {
     height: 6 * $basesize;
 
-    &__btn {
+    &__icon {
       width: 4 * $basesize;
+
+      &[id$='-toggler'] [class*='icon-']:before {
+        right: 50%;
+      }
+    }
+
+    &__text {
+      width: 10 * $basesize;
     }
 
     > * {
@@ -128,88 +70,70 @@
       right: 100%;
       transform: translate(100%, -50%);
     }
+
+    &:not(#manager)::after {
+      position: absolute;
+      background: transparent;
+      content: '';
+      width: calc(100% + 2rem);
+      height: 100%;
+      margin-left: -1rem;
+      transition: $transition;
+    }
+
+    &:not(#manager):hover::after {
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 0.3rem solid $color-secondary;
+    }
+
+    &__border::before {
+      position: absolute;
+      bottom: -3 * $basesize;
+      width: calc(100% + 2rem);
+      height: 1px;
+      margin-left: -1rem;
+      content: '';
+      background: $color-primary-4;
+      opacity: 0.5;
+    }
   }
 
-  &__elem:last-of-type {
-    margin-bottom: 2rem;
-  }
-
-  &__elem:last-of-type::before {
+  &::after {
     position: absolute;
-    width: calc(100% + 2rem);
-    height: 1px;
-    margin-left: -1rem;
-    bottom: -2rem;
+    top: -6 * $basesize;
+    left: 24 * $basesize;
+    height: 6 * $basesize;
+    width: 100vw;
+    background: $color-primary-5;
+    border: 1px solid $color-primary-5;
     content: '';
-    background: $color-primary-4;
-    opacity: 0.5;
-  }
-
-  &__elem::after {
-    position: absolute;
-    background: transparent;
-    content: '';
-    width: calc(100% + 2rem);
-    height: 100%;
-    margin-left: -1rem;
-    margin-right: -2rem;
     transition: $transition;
   }
 
-  &__elem:hover::after {
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.1);
-    border-left: 0.3rem solid $color-secondary;
+  &__fill {
+    display: none;
   }
 
   &.active {
     left: 0;
     transition: $transition;
+
+    &::after {
+      width: 24 * $basesize;
+      left: 0;
+      transition: $transition;
+    }
   }
 }
 
-.calendar {
-  border: 1px solid $color-primary-3;
-  color: $color-primary-5;
-  display: flex;
-  max-width: 500px;
-  text-align: start;
-  align-items: center;
-  padding: 0;
+#manager {
+  display: none;
+  margin: 6 * $basesize 0;
 
-  &__btn {
-    position: relative;
-    padding: 1.25em;
-    aspect-ratio: 1;
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    * {
-      color: $color-primary-5;
-    }
+  &.active {
+    display: initial;
   }
-
-  &__btn:hover {
-    [class*='icon-']:before {
-      font-weight: $font-semibold;
-    }
-  }
-
-  .section-header {
-    line-height: 2;
-  }
-
-  > :nth-child(2) {
-    padding-left: 1rem;
-    border-left: 1px solid $color-primary-3;
-  }
-}
-
-.calendar:hover {
-  background-color: $color-primary-1;
-  cursor: initial;
 }
 
 #general-statistic {
@@ -222,11 +146,85 @@
   height: 70vh;
 }
 
+@media (min-width: 576px) {
+  .sidebar::after {
+    display: none;
+  }
+
+  .menu {
+    @include menu($basesize);
+
+    width: 100%;
+    height: 6 * $basesize;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    z-index: 2;
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__elem {
+      height: 100%;
+      border-left: 1px solid $color-primary-3;
+      border-bottom: 1px solid $color-primary-3;
+
+      &__icon {
+        aspect-ratio: 1;
+
+        &#notification-toggler {
+          order: -1;
+          border-right: 1px solid $color-primary-3;
+        }
+      }
+
+      &__text {
+        width: fit-content;
+        font-weight: $font-semibold;
+        color: $color-primary-4;
+
+        &.text {
+          color: $color-ternary;
+          margin-right: 1.5rem;
+          white-space: nowrap;
+        }
+      }
+
+      &:last-of-type {
+        border-right: 1px solid $color-primary-3;
+      }
+
+      &:hover:not(.menu__fill) {
+        background-color: $color-primary-2;
+      }
+
+      &__icon[type='button']:hover {
+        cursor: pointer;
+
+        [class*='icon-']:before {
+          font-weight: $font-semibold;
+        }
+      }
+    }
+
+    &__fill {
+      flex-grow: 1;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .main.active {
+    padding-left: 24 * $basesize + 1rem;
+  }
+}
+
 @media (max-width: 767px) {
   $basesize: 0.44rem;
 
   .main.active {
-    padding-left: 24 * $basesize + 1rem;
+    padding-left: 1rem;
   }
 
   .menu {
@@ -249,7 +247,7 @@
         font-size: $basesize * 3;
       }
 
-      &__btn label {
+      &__icon label {
         transform: scale(0.6 * $basesize / 1rem);
       }
     }
@@ -257,8 +255,102 @@
     &__elem {
       height: 6 * $basesize;
 
-      &__btn {
+      &__icon {
         width: 4 * $basesize;
+      }
+    }
+
+    &::after {
+      top: -6 * $basesize;
+      height: 6 * $basesize;
+    }
+
+    &.active::after {
+      width: 24 * $basesize;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  $basesize: 0.44rem;
+
+  .sidebar {
+    &::after {
+      top: -6 * $basesize;
+      height: 6 * $basesize;
+    }
+
+    &.active::after {
+      width: 24 * $basesize;
+    }
+  }
+
+  #menu {
+    .menu {
+      @include menu($basesize);
+      @include sidebar($basesize);
+
+      flex-direction: column;
+      left: -24 * $basesize;
+      margin-top: 6 * $basesize;
+
+      &__elem {
+        height: 6 * $basesize;
+
+        &__icon {
+          width: 4 * $basesize;
+        }
+
+        &__icon[id$='-toggler'] [class*='icon-']:before {
+          right: 50%;
+        }
+
+        &__text {
+          width: 10 * $basesize;
+          line-height: 1.1;
+        }
+
+        > * {
+          color: $color-primary-2;
+          height: inherit;
+        }
+
+        [class*='icon-']:before {
+          right: 100%;
+          transform: translate(100%, -50%);
+        }
+      }
+
+      &__elem::after {
+        position: absolute;
+        background: transparent;
+        content: '';
+        width: calc(100% + 2rem);
+        height: 100%;
+        margin-left: -1rem;
+        transition: $transition;
+      }
+
+      &__elem:hover::after {
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.1);
+        border-left: 0.3rem solid $color-secondary;
+      }
+
+      &::after {
+        position: absolute;
+        top: -6 * $basesize;
+        left: 24 * $basesize;
+        height: 6 * $basesize;
+        width: 100vw;
+        background: $color-primary-5;
+        border: 1px solid $color-primary-5;
+        content: '';
+        transition: $transition;
+      }
+
+      &__fill {
+        display: none;
       }
     }
   }

@@ -1,0 +1,43 @@
+.calendar {
+  border: 1px solid $color-primary-3;
+  color: $color-primary-5;
+  display: flex;
+  max-width: 500px;
+  text-align: start;
+  align-items: center;
+  padding: 0;
+
+  &__icon {
+    position: relative;
+    padding: 1.25em;
+    aspect-ratio: 1;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    * {
+      color: $color-primary-5;
+    }
+  }
+
+  &__icon:hover {
+    [class*='icon-']:before {
+      font-weight: $font-semibold;
+    }
+  }
+
+  .section-header {
+    line-height: 2;
+  }
+
+  > :nth-child(2) {
+    padding-left: 1rem;
+    border-left: 1px solid $color-primary-3;
+  }
+}
+
+.calendar:hover {
+  background-color: $color-primary-1;
+  cursor: initial;
+}
