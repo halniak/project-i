@@ -1,4 +1,4 @@
-.link {
+%link {
   text-decoration: none;
   color: $color-ternary;
 
@@ -7,12 +7,17 @@
   }
 }
 
-.link-lg {
+.link {
   @extend %link;
-  font-size: $font-size-3;
+  font-size: $font-size2;
 }
 
 .link-sm {
   @extend %link;
-  font-size: $font-size-1;
+  font-size: $font-size1;
+}
+
+.link-lg {
+  @extend %link;
+  font-size: $font-size3;
 }
