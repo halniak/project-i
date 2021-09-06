@@ -4,6 +4,7 @@
 @import 'normalize';
 @import 'global';
 @import 'layout';
+@import 'typography';
 
 /* Components */
 @import 'components/buttons';
@@ -11,11 +12,13 @@
 @import 'components/menuButton';
 @import 'components/lists';
 @import 'components/links';
-@import 'components/typography';
 @import 'components/inputs';
+@import 'components/notifications';
 
 /* Sections */
-@import 'sections/sections';
+@import 'sections/main';
+@import 'sections/menu';
+@import 'sections/sidebar';
 
 /* Pages */
 @import 'pages/pages';

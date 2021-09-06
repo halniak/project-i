@@ -14,86 +14,92 @@
 </head>
 
 <body>
-  <div class="btn-secondary">Lorem</div>
-  <div class="btn-primary">Lorem</div>
-  <div class="btn-disabled">Lorem</div>
-  <div class="btn-tab">
-    <span class="tab-dot"></span>
-    <span class="">Lorem</span>
-  </div>
-  <div class="btn-tab btn-tab--active">
-    <span class="tab-dot"></span>
-    <span class="">Lorem</span>
-  </div><br>
 
-  <div class="btn calendar">
-    <div class="col">
+  <div class="row margin-tb">
+    <div class="margin-lr">
+      <div class="page-header">page header</div>
+    </div>
+    <div class="margin-lr">
+      <div class="section-header">section header</div>
+    </div>
+    <div class="margin-lr">
+      <div class="text">text</div>
+    </div>
+  </div>
+
+  <div class="row margin-tb">
+    <div class="col-4 margin-tb">
+      <div class="btn btn-primary">primary</div>
+    </div>
+    <div class="col-4 margin-tb">
+      <div class="btn btn-secondary">secondary</div>
+    </div>
+    <div class="col-4 margin-tb">
+      <div class="btn btn-disabled padding-l-3">
+        <i class="center btn__icon-l icon-links"></i>
+        <span>disabled</span>
+      </div>
+    </div>
+    <div class="col-4 margin-tb">
+      <div class="btn btn-tab padding-l-3">
+        <span class="center btn__icon-l btn__dot"></span>
+        <span>tab</span>
+      </div>
+    </div>
+    <div class="col-4 margin-tb">
+      <div class="btn btn-tab padding-l-3 active">
+        <span class="center btn__icon-l btn__dot"></span>
+        <span>tab active</span>
+      </div>
+    </div>
+    <div class="col-4 margin-tb">
+      <div class="btn btn-secondary btn-square" title="btn-square">
+        <i class="center icon-refresh"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin-tb">
+    <div class="btn notification__negative padding-lr-3">Negative notification
+      <i class="center btn__icon-l icon-negative"></i>
+      <i class="center btn__icon-r icon-close"></i>
+    </div>
+    <div class="btn notification__positive padding-lr-3">Positive notification
+      <i class="center btn__icon-l icon-positive"></i>
+      <i class="center btn__icon-r icon-close"></i>
+    </div>
+  </div>
+
+  <div class="row margin-tb">
+    <div class="btn calendar">
       <span class="section-header">27.08.2021</span>
-    </div>
-    <div class="col">
-      <span class="section-header">26.09.2021</span>
-    </div>
-    <span class="calendar__btn">
+      <span class="section-header padding-r-3">26.09.2021</span>
       <a class="link" href="#" aria-label="lorem ipsum">
-        <i class="icon-calendar"></i>
+        <i class="center btn__icon-r icon-calendar"></i>
       </a>
-    </span>
-  </div>
-
-  <div id="btn-refresh" class="btn btn-secondary">
-    <i class="icon-refresh"></i>
-  </div>
-
-  <div class="btn btn-menu">
-    <a href="#" aria-label="lorem ipsum">
-      <i class="icon-notification"></i>
-      <div class="icon-notification__badge"></div>
-    </a>
-  </div><br>
-
-  <div class="notification-badge--active"></div>
-
-  <div id="btn-notification" class="btn btn-menu">
-    <div class="row">
-      <div class="col-2">
-        <i class="icon-login"></i>
-      </div>
-      <div class="col">
-        <span class="text">Anna Maria</span>
-      </div>
-    </div>
-  </div>
-  <br>
-
-  <div id="btn-wallet" class="btn btn-menu">
-    <div class="row">
-      <div class="col-2">
-        <i class="icon-wallet"></i>
-      </div>
-      <div class="col-8">
-        <span class="text">$ 1500,00</span>
-      </div>
-      <div class="col-2">
-        <a href="#" class="icon-arrow-down-small" aria-label="lorem ipsum">
-          <!-- <i class="icon-arrow-down-small"></i> -->
-        </a>
-      </div>
     </div>
   </div>
 
-  <div class="btn btn-menu" type="button">
-    <a href="#" aria-label="lorem ipsum">
-      <i class="icon-quit"></i>
-    </a>
+  <!--   <div class="row margin-tb">
+    <label>
+      <input type="checkbox" hidden>
+      <span class="checkmark"></span>
+      Checkbox
+    </label>
+
+  </row> -->
+
+  <div class="row margin-tb">
+    <div class="margin-lr">
+      <a href="#" class="link-sm">Small link</a>
+    </div>
+    <div class="margin-lr">
+      <a href="#" class="link">Regular link</a>
+    </div>
+    <div class="margin-lr">
+      <a href="#" class="link-lg">Large link</a>
+    </div>
   </div>
-
-  <a href="#" class="link">Lorem</a>
-  <a href="#" class="link link-lg">Lorem</a>
-  <a href="#" class="link link-sm">Lorem</a>
-
-  <div class="page-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-  <div class="section-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-  <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
 
   <table class="table-general header">
     <tbody>

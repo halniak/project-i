@@ -3,15 +3,16 @@
   color: $color-ternary;
 
   &:hover {
-    cursor: pointer;
     color: $color-secondary;
   }
 }
 
 .link-lg {
+  @extend %link;
   font-size: $font-size-3;
 }
 
 .link-sm {
+  @extend %link;
   font-size: $font-size-1;
 }

@@ -1,0 +1,29 @@
+.notification {
+  border-radius: 0;
+  width: 100%;
+  text-align: start;
+  margin-bottom: 2 * $basesize;
+
+  [class*='icon-close']::before {
+    left: 150%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__negative {
+    @extend %notification;
+    background-color: $color-negative;
+
+    &:hover {
+      background-color: $color-negative-hover;
+    }
+  }
+
+  &__positive {
+    @extend %notification;
+    background-color: $color-positive;
+
+    &:hover {
+      background-color: $color-positive-hover;
+    }
+  }
+}

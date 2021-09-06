@@ -25,6 +25,19 @@
   padding-right: 2 * $basesize;
 }
 
+.padding-l-3 {
+  padding-left: 6 * $basesize !important;
+}
+
+.padding-lr-3 {
+  padding-left: 6 * $basesize !important;
+  padding-right: 6 * $basesize !important;
+}
+
+.padding-r-3 {
+  padding-right: 6 * $basesize !important;
+}
+
 .row-end {
   justify-content: flex-end;
 }
@@ -34,13 +47,18 @@
   align-items: center;
 }
 
-[class*='icon-']:before {
+.center,
+[class*='icon-']::before {
   position: absolute;
-  right: 50%;
+  left: 50%;
   top: 50%;
-  transform: translate(50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .relative {
   position: relative;
+}
+
+.float-right {
+  float: right;
 }

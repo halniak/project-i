@@ -1,0 +1,244 @@
+.menu__elem {
+  &__list__item > .notification__badge {
+    left: 95%;
+    top: 30%;
+    transition: all 0.3s;
+  }
+
+  &.expanded {
+    &#wallet {
+      > .menu__elem__list {
+        columns: 2 6 * $basesize;
+      }
+
+      &__toggler [class*='icon-']:before {
+        transform: translate(-10%, -50%) scaleY(-1);
+        transition: $transition;
+      }
+    }
+
+    > ul {
+      opacity: 1;
+      max-height: 30 * $basesize;
+      transition: $transition;
+      margin-block-start: 1 * $basesize;
+      margin-block-end: 2 * $basesize;
+
+      .notification__badge {
+        left: 95%;
+        top: 30%;
+        transition: $transition;
+      }
+    }
+  }
+}
+
+#notification {
+  transition: $transition;
+}
+
+#wallet {
+  transition: $transition;
+}
+
+@media (min-width: 576px) {
+  .menu {
+    @include menu($basesize);
+
+    width: 100%;
+    height: 6 * $basesize;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    z-index: 2;
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__elem {
+      height: 100%;
+      border-left: 1px solid $color-primary-3;
+      border-bottom: 1px solid $color-primary-3;
+
+      &__icon {
+        aspect-ratio: 1;
+      }
+
+      &__text {
+        width: fit-content;
+        font-weight: $font-semibold;
+        color: $color-primary-4;
+
+        &.text {
+          color: $color-ternary;
+          margin-right: 1.5rem;
+          white-space: nowrap;
+        }
+      }
+
+      &:last-of-type {
+        border-right: 1px solid $color-primary-3;
+      }
+
+      &:hover:not(.menu__fill) {
+        background-color: $color-primary-2;
+      }
+
+      &__icon[type='button']:hover {
+        cursor: pointer;
+
+        [class*='icon-']:before {
+          font-weight: $font-semibold;
+        }
+      }
+    }
+
+    &__fill {
+      flex-grow: 1;
+    }
+  }
+
+  #notification {
+    .menu__elem__icon > .notification__badge {
+      top: 27%;
+      left: 48%;
+    }
+
+    #notification__toggler {
+      order: -1;
+      border-right: 1px solid $color-primary-3;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  $basesize: 0.44rem;
+
+  .menu {
+    height: 6 * $basesize;
+
+    &__elem__text {
+      max-width: $basesize * 18;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  $basesize: 0.44rem;
+
+  #menu {
+    margin-top: 6 * $basesize;
+
+    .menu {
+      @include menu($basesize);
+      @include sidebar($basesize);
+
+      flex-direction: column;
+      left: -24 * $basesize;
+      margin-top: 6 * $basesize;
+
+      &__elem {
+        flex-wrap: wrap;
+        align-content: flex-start;
+
+        &__icon {
+          width: 5 * $basesize;
+          height: 6 * $basesize;
+        }
+
+        [class*='icon-']:before {
+          right: 100%;
+          transform: translate(100%, -50%);
+        }
+
+        [id$='__toggler'] [class*='icon-']:before {
+          right: 0;
+          transform: translate(-10%, -50%);
+          transition: $transition;
+        }
+
+        &__text {
+          flex-grow: 1;
+          line-height: 1.1;
+        }
+
+        > * {
+          color: $color-primary-2;
+        }
+
+        /* &__list__item > .notification__badge {
+          left: 95%;
+          top: 30%;
+          transition: all 0.3s;
+        }
+
+        &.expanded {
+          &#wallet {
+            > .menu__elem__list {
+              columns: 2 6 * $basesize;
+            }
+          }
+
+          #wallet__toggler [class*='icon-']:before {
+            transform: translate(-10%, -50%) scaleY(-1);
+            transition: $transition;
+          }
+
+          > ul {
+            opacity: 1;
+            max-height: 30 * $basesize;
+            transition: $transition;
+            margin-block-start: 1 * $basesize;
+            margin-block-end: 2 * $basesize;
+
+            & .notification__badge {
+              left: 95%;
+              top: 30%;
+              transition: $transition;
+            }
+          }
+        } */
+      }
+
+      &__elem::after {
+        position: absolute;
+        background: transparent;
+        content: '';
+        width: calc(100% + 2rem);
+        height: 100%;
+        margin-left: -1rem;
+        transition: $transition;
+      }
+
+      &__elem:hover::after {
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.1);
+        border-left: 0.3rem solid $color-secondary;
+      }
+
+      &::after {
+        position: absolute;
+        top: -6 * $basesize;
+        left: 24 * $basesize;
+        height: 6 * $basesize;
+        width: 100vw;
+        background: $color-primary-5;
+        border: 1px solid $color-primary-5;
+        content: '';
+        transition: $transition;
+      }
+
+      &__fill {
+        display: none;
+      }
+    }
+  }
+
+  #notification {
+    .menu__elem__icon > .notification__badge {
+      top: 25%;
+      left: 75%;
+    }
+  }
+}

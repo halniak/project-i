@@ -1,30 +1,23 @@
-.icon-notification__badge {
-  visibility: hidden;
+.notification__badge {
+  opacity: 0;
+  transition: $transition;
   position: absolute;
   width: $basesize;
   height: $basesize;
   border-radius: 50%;
   background-color: $color-secondary;
-  top: 30%;
-  left: 50%;
 
   &.active {
-    visibility: visible;
+    opacity: 1;
+    transition: $transition;
   }
 }
 
 @media (max-width: 767px) {
   $basesize: 0.44rem;
 
-  .icon-notification__badge {
+  .notification__badge {
     width: $basesize;
     height: $basesize;
-  }
-}
-
-@media (max-width: 575px) {
-  .icon-notification__badge {
-    top: 25%;
-    left: 75%;
   }
 }
