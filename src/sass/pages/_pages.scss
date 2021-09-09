@@ -9,3 +9,44 @@
     padding-top: 6 * $basesize;
   }
 }
+
+.page {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 2 * $basesize;
+
+  &.active {
+    display: flex;
+  }
+
+  &__section {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2 * $basesize 20%;
+
+    &--border {
+      border-bottom: 1px solid $color-primary-3;
+    }
+
+    img {
+      width: 300px;
+      height: 200px;
+    }
+  }
+
+  &__subsection {
+    &.section-header {
+      flex: 1 1 100%;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .page__section {
+    padding: 2 * $basesize 5%;
+  }
+}

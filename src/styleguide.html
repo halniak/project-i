@@ -8,6 +8,7 @@
   <title>project-i styleguide</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <link rel="stylesheet" href="vendor/bootstrap-grid.css">
   <link rel="stylesheet" href="vendor/icons/css/Glyphter.css">
   <link rel="stylesheet" href="css/style.css">
@@ -36,37 +37,37 @@
     </div>
     <div class="col-4 margin-tb">
       <div class="btn btn-disabled padding-l-3">
-        <i class="center btn__icon-l icon-links"></i>
+        <i class="btn__icon-l icon-links"></i>
         <span>disabled</span>
       </div>
     </div>
     <div class="col-4 margin-tb">
       <div class="btn btn-tab padding-l-3">
-        <span class="center btn__icon-l btn__dot"></span>
+        <span class="btn__icon-l btn__dot"></span>
         <span>tab</span>
       </div>
     </div>
     <div class="col-4 margin-tb">
       <div class="btn btn-tab padding-l-3 active">
-        <span class="center btn__icon-l btn__dot"></span>
+        <span class="btn__icon-l btn__dot"></span>
         <span>tab active</span>
       </div>
     </div>
     <div class="col-4 margin-tb">
       <div class="btn btn-secondary btn-square" title="btn-square">
-        <i class="center icon-refresh"></i>
+        <i class="icon-refresh"></i>
       </div>
     </div>
   </div>
 
   <div class="row margin-tb">
     <div class="btn notification__negative padding-lr-3">Negative notification
-      <i class="center btn__icon-l icon-negative"></i>
-      <i class="center btn__icon-r icon-close"></i>
+      <i class="btn__icon-l icon-negative"></i>
+      <i class="btn__icon-r icon-close"></i>
     </div>
     <div class="btn notification__positive padding-lr-3">Positive notification
-      <i class="center btn__icon-l icon-positive"></i>
-      <i class="center btn__icon-r icon-close"></i>
+      <i class="btn__icon-l icon-positive"></i>
+      <i class="btn__icon-r icon-close"></i>
     </div>
   </div>
 
@@ -75,19 +76,18 @@
       <span class="section-header">27.08.2021</span>
       <span class="section-header padding-r-3">26.09.2021</span>
       <a class="link" href="#" aria-label="lorem ipsum">
-        <i class="center btn__icon-r icon-calendar"></i>
+        <i class="btn__icon-r icon-calendar"></i>
       </a>
     </div>
   </div>
 
-  <!--   <div class="row margin-tb">
-    <label>
-      <input type="checkbox" hidden>
-      <span class="checkmark"></span>
-      Checkbox
+  <div class="row margin-tb">
+    <label class="check">
+      <input type="checkbox">
+      <span class="check__box"></span>
+      <span class="check__label">Checkbox</span>
     </label>
-
-  </row> -->
+  </div>
 
   <div class="row margin-tb">
     <div class="margin-lr">
@@ -101,44 +101,85 @@
     </div>
   </div>
 
-  <table class="table-general header">
+  <div class="row margin-tb">
+    <table class="table-general">
+      <tbody>
+        <tr>
+          <td class="section-header">
+            Visit signups
+          </td>
+          <td class="text">
+            124
+          </td>
+        </tr>
+        <tr>
+          <td class="section-header">
+            FTD
+          </td>
+          <td class="text">
+            567
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row margin-tb">
+    <table class="table-products">
+      <tbody>
+        <tr>
+          <td class="section-header">
+            Link 1
+          </td>
+          <td>
+            <a href="#" class="link">www.link.com</a>
+          </td>
+          <td class="table-products__btn">
+            <a href="#" class="icon-links" aria-label="links"></a>
+          </td>
+          <td class="table-products__btn">
+            <a href="#" class="icon-trash" aria-label="trash"></a>
+          </td>
+        </tr>
+        <tr>
+          <td class="section-header">
+            Link 2
+          </td>
+          <td class="">
+            <a href="#" class="link">www.sony.com</a>
+          </td>
+          <td class="table-products__btn">
+            <a href="#" class="icon-links link" aria-label="links"></a>
+          </td>
+          <td class="table-products__btn">
+            <a href="#" class="link icon-trash" aria-label="trash"></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Job Title</th>
+      </tr>
+    </thead>
     <tbody>
       <tr>
-        <td class="section-header">
-          Visit signups
-        </td>
-        <td class="cell-right text">
-          124
-        </td>
+        <td>James</td>
+        <td>Matman</td>
+        <td>Chief Sandwich Eater</td>
       </tr>
       <tr>
-        <td class="section-header">
-          FTD
-        </td>
-        <td class="cell-right text">
-          567
-        </td>
+        <td>The</td>
+        <td>Tick</td>
+        <td>Crimefighter Sorta</td>
       </tr>
     </tbody>
-  </table><br>
-
-  <div class="table-links">
-    <div class="row">
-      <div class="col-4">
-        <span class="section-header">Link 1</span>
-      </div>
-      <div class="col-6">
-        <a class="link">www.link.com</a>
-      </div>
-      <div class="table-links__btn">
-        <a href="#" class="icon-links" aria-label="lorem ipsum"></a>
-      </div>
-      <div class="table-links__btn">
-        <a href="#" class="icon-trash" aria-label="lorem ipsum"></a>
-      </div>
-    </div>
-  </div>
-  <br>
+  </table>
 
   <!-- <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
   <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>

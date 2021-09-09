@@ -5,7 +5,6 @@
   height: 100vh;
   flex-direction: column;
   z-index: 2;
-  left: -24 * $basesize;
   transition: $transition;
 
   &__toggler {
@@ -18,7 +17,10 @@
     z-index: 4;
     top: 0;
     padding-left: 2 * $basesize;
-    cursor: pointer;
+
+    &__icon {
+      visibility: hidden;
+    }
 
     &__logo {
       font-family: 'Covered By Your Grace';
@@ -34,6 +36,11 @@
   &__elem {
     height: 6 * $basesize;
 
+    &.active::after {
+      border-left: 0.3rem solid $color-secondary;
+      filter: brightness(0.8);
+    }
+
     &__icon {
       width: 5 * $basesize;
 
@@ -42,18 +49,15 @@
       }
     }
 
-    /* &__text {
-      width: 10 * $basesize;
-    } */
-
     > * {
       color: $color-primary-2;
       height: inherit;
     }
 
     [class*='icon-']:before {
-      right: 100%;
-      transform: translate(100%, -50%);
+      @include absolute-center;
+      left: 25%;
+      //transform: translate(100%, -50%);
     }
 
     &:not(#manager)::after {
@@ -131,12 +135,18 @@
   $basesize: 0.44rem;
 
   .sidebar {
+    left: -24 * $basesize;
     width: 24 * $basesize;
 
     &__toggler {
-      width: 24 * $basesize;
+      cursor: pointer;
       height: 6 * $basesize;
       padding-left: 2 * $basesize;
+      width: 24 * $basesize;
+
+      &__icon {
+        visibility: visible;
+      }
 
       &__logo {
         font-size: $basesize * 3;

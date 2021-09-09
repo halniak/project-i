@@ -4,7 +4,7 @@
   border-radius: 0.3rem;
   color: #ffffff;
   display: inline-block;
-  font-size: $font-size-3;
+  font-size: $font-size-2;
   padding: 0.5rem 1rem;
   position: relative;
   text-align: center;
@@ -13,20 +13,21 @@
   cursor: pointer;
 
   &__icon-l {
+    @include absolute-center;
     left: 3 * $basesize;
     color: $color-primary-5;
   }
 
   &__icon-r {
+    @include absolute-center;
     right: 3 * $basesize;
     color: $color-primary-5;
   }
 
   &__dot {
-    background-color: $color-ternary;
     border-radius: 100%;
-    height: 2.5 * $basesize;
-    width: 2.5 * $basesize;
+    height: 2 * $basesize;
+    width: 2 * $basesize;
   }
 
   [class*='icon-']:before {
@@ -69,11 +70,32 @@
   background-color: #ffffff;
   border-color: #ffffff;
   color: $color-primary-4;
+  font-size: $font-size-1;
 
   &:hover,
   &.active {
     background-color: $color-primary-2;
     border-color: $color-primary-3;
+  }
+}
+
+#btn-tab {
+  &__signups {
+    > .btn__dot {
+      background-color: $color-ternary;
+    }
+  }
+
+  &__FTD {
+    > .btn__dot {
+      background-color: $color-secondary-active;
+    }
+  }
+
+  &__earned {
+    > .btn__dot {
+      background-color: $color-positive-active;
+    }
   }
 }
 

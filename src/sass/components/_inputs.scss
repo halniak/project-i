@@ -13,10 +13,6 @@
     padding-right: 1rem;
     width: 20 * $basesize;
     text-align: start;
-
-    &:hover {
-      color: $color-primary-5;
-    }
   }
 
   > :nth-child(2) {
@@ -38,18 +34,53 @@
   }
 }
 
-@media (max-width: 767px) {
-  $basesize: 0.44rem;
-
-  .calendar .section-header {
-    width: 20 * $basesize;
-  }
-}
-
-.checkmark {
-  color: $color-primary-5;
-  height: $basesize;
+.check {
   position: relative;
-  width: $basesize;
-  visibility: visible;
+  display: inline-block;
+
+  &__box {
+    border: 1px solid $color-primary-3;
+    color: $color-primary-5;
+    height: 1.3rem;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1.3rem;
+
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+    }
+  }
+
+  &__label {
+    padding-left: 2 * $basesize;
+    margin-bottom: $basesize;
+  }
+
+  input {
+    visibility: hidden;
+  }
+
+  input:checked ~ &__box {
+    background-color: $color-positive-active;
+    border-color: $color-positive-active;
+
+    &::after {
+      @include absolute-center;
+      color: $color-primary-1;
+      content: '\f00c';
+      display: block;
+      font-family: 'FontAwesome';
+    }
+  }
+
+  @media (max-width: 767px) {
+    $basesize: 0.44rem;
+
+    .calendar .section-header {
+      width: 20 * $basesize;
+    }
+  }
 }

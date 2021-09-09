@@ -8,7 +8,9 @@
     left: 150%;
     transform: translate(-50%, -50%);
   }
+}
 
+.notification {
   &__negative {
     @extend %notification;
     background-color: $color-negative;

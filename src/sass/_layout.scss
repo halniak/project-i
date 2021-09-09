@@ -47,12 +47,9 @@
   align-items: center;
 }
 
-.center,
 [class*='icon-']::before {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  @include absolute-center;
+  left: 25%;
 }
 
 .relative {
@@ -61,4 +58,15 @@
 
 .float-right {
   float: right;
+}
+
+.scroll-wrapper {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.scroll-wrapper img {
+  width: auto;
+  max-width: 100%;
 }

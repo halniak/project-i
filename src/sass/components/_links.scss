@@ -9,15 +9,15 @@
 
 .link {
   @extend %link;
-  font-size: $font-size2;
+  font-size: $font-size-2;
 }
 
 .link-sm {
   @extend %link;
-  font-size: $font-size1;
+  font-size: $font-size-1;
 }
 
 .link-lg {
   @extend %link;
-  font-size: $font-size3;
+  font-size: $font-size-3;
 }

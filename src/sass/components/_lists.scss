@@ -1,52 +1,60 @@
 table {
-  width: 100%;
   border-collapse: collapse;
 
-  .cell-right {
-    text-align: end;
+  tr {
+    border-bottom: 1px solid $color-primary-3;
+    padding: $basesize;
+
+    td:last-of-type {
+      text-align: end;
+    }
   }
 }
 
 .table-general {
-  td {
-    border-bottom: 1px solid $color-primary-2;
-    padding: 20px 0 5px;
+  tr {
+    td {
+      padding: 2 * $basesize 0 0;
+    }
+  }
+
+  .section-header {
+    padding-right: 2 * $basesize;
   }
 }
 
-.table-links {
-  [class*='icon-']:before {
-    opacity: 0;
+.table-products {
+  tr {
+    [class*='icon-']:before {
+      @include absolute-center;
+      opacity: 0;
+      transition: $transition;
+      color: $color-primary-5;
+    }
+
+    &:first-of-type {
+      border-top: 1px solid $color-primary-3;
+    }
+
+    &:hover {
+      background-color: $color-primary-2;
+      transition: $transition;
+
+      [class*='icon-']:before {
+        opacity: 1;
+        transition: $transition;
+      }
+    }
   }
 
   &__btn {
-    width: 50px;
+    width: 6 * $basesize;
     text-align: end;
     position: relative;
   }
 
   &__btn:hover [class*='icon-']:before {
     font-weight: $font-semibold;
-  }
-
-  .row:hover {
-    background-color: $color-primary-2;
-    transition: $transition;
-
-    [class*='icon-']:before {
-      opacity: 1;
-      transition: $transition;
-      color: $color-primary-5;
-    }
-  }
-
-  > * {
-    border-top: 1px solid $color-primary-3;
-    padding: 15px 0;
-  }
-
-  > :last-child {
-    border-bottom: 1px solid $color-primary-3;
   }
 }
 
@@ -63,5 +71,42 @@ ul {
 
   li {
     font-size: 1.5 * $basesize;
+  }
+}
+
+@media (min-width: 575px) {
+  table {
+    transform: scale(0.9);
+
+    tr {
+      td {
+        padding: 2 * $basesize;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  $basesize: 0.44rem;
+
+  table,
+  thead,
+  tbody,
+  th,
+  tr {
+    display: block;
+  }
+
+  td,
+  tr {
+    padding: $basesize;
+  }
+
+  table {
+    transform: scale(0.8);
+  }
+
+  td:first-of-type {
+    border-bottom: 1px solid $color-primary-2;
   }
 }

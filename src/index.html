@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>project-i</title>
-  <meta name="description" content="aaa">
+  <meta name="description" content="project-i">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro">
   <link rel="stylesheet" href="vendor/icons/css/Glyphter.css">
   <link rel="stylesheet" href="vendor/bootstrap-grid.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -36,7 +37,7 @@
 
     <div class="row margin-0 relative">
       <nav class="padding-lr sidebar active">
-        <div class="sidebar__elem" type="button">
+        <div id="btn-general" class="sidebar__elem active" type="button">
           <div class="sidebar__elem__icon" type="button">
             <i class="icon-general"></i>
           </div>
@@ -49,7 +50,7 @@
           </div>
           <div class="text-btn sidebar__elem__text">Details</div>
         </div>
-        <div class="sidebar__elem" type="button">
+        <div id="btn-links" class="sidebar__elem" type="button">
           <div class="sidebar__elem__icon" type="button">
             <i class="icon-links"></i>
           </div>
@@ -152,59 +153,125 @@
         </div>
       </nav>
     </div>
-    <div class="col main active">
-      <div class="row margin-tb main__elem">
-        <section id="general-statistic">
-          <div class="page-header padding-tb padding-lr">
-            general statistic
+    <div class="main active">
+      <section id="general" class="page row margin-tb main__elem active">
+        <div class="page__header padding-tb padding-lr">
+          general statistic
+        </div>
+        <div class="page__section page__section--border">
+          <div class="btn calendar">
+            <span id="start-date" class="section-header"></span>
+            <span id="end-date" class="section-header padding-r-3"></span>
+            <a class="link" href="#" aria-label="lorem ipsum">
+              <i class="btn__icon-r icon-calendar"></i>
+            </a>
           </div>
-        </section>
-      </div>
-      <div class="row margin-tb main__elem">
-        <section id="links">
-          <div class="page-header padding-tb padding-lr">
-            links
-          </div>
-          <button class="btn btn-secondary margin-tb" type="button">
-            + add new
-          </button>
-          <div class="col-8 margin-tb">
-            <div class="table-links">
-              <div class="row">
-                <div class="col-4">
-                  <span class="section-header">Link 1</span>
-                </div>
-                <div class="col-5">
-                  <a class="link">www.link.com</a>
-                </div>
-                <div class="table-links__btn">
-                  <a href="#" class="icon-links" aria-label="lorem ipsum"></a>
-                </div>
-                <div class="table-links__btn">
-                  <a href="#" class="icon-trash" aria-label="lorem ipsum"></a>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-4">
-                  <span class="section-header">Link 2</span>
-                </div>
-                <div class="col-5">
-                  <a class="link">www.sony.com</a>
-                </div>
-                <div class="table-links__btn">
-                  <a href="#" class="icon-links" aria-label="lorem ipsum"></a>
-                </div>
-                <div class="table-links__btn">
-                  <a href="#" class="icon-trash" aria-label="lorem ipsum"></a>
-                </div>
-              </div>
+        </div>
+        <div class="page__section">
+          <table class="table-general col">
+            <tbody>
+              <tr>
+                <td class="section-header">
+                  Visit signups
+                </td>
+                <td class="text">
+                  124
+                </td>
+              </tr>
+              <tr>
+                <td class="section-header">
+                  FTD
+                </td>
+                <td class="text">
+                  567
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="col-1"></div>
+          <table class="table-general col">
+            <tbody>
+              <tr>
+                <td class="section-header">
+                  Net deposit
+                </td>
+                <td class="text">
+                  345
+                </td>
+              </tr>
+              <tr>
+                <td class="section-header">
+                  Turnover
+                </td>
+                <td class="text">
+                  165
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="page__section">
+          <p class="page__subsection section-header">Earnings chart</p>
+          <div class="page__subsection">
+            <div id="btn-tab__signups" class="btn btn-tab padding-l-3">
+              <span class="btn__icon-l btn__dot"></span>
+              <span>signups</span>
+            </div>
+            <div id="btn-tab__FTD" class="btn btn-tab padding-l-3">
+              <span class="btn__icon-l btn__dot"></span>
+              <span>FTD</span>
+            </div>
+            <div id="btn-tab__earned" class="btn btn-tab padding-l-3">
+              <span class="btn__icon-l btn__dot"></span>
+              <span>Earned</span>
             </div>
           </div>
-        </section>
-      </div>
+          <div class="page__subsection scroll-wrapper">
+            <img src="/images/general-graph-sm.png" alt="" srcset="/images/general-graph-lg.png 1024w,
+            /images/general-graph-md.png 767w,
+            /images/general-graph-sm.png 575w">
+          </div>
+        </div>
+      </section>
+      <section id="links" class="page row margin-tb main__elem">
+        <div class="page__header padding-tb padding-lr">
+          links
+        </div><button class="btn btn-secondary margin-tb" type="button">
+          + add new
+        </button>
+        <div id="table-links" class="page__section"></div>
+        <button class="btn btn-secondary margin-tb" type="button">
+          + add new
+        </button>
+      </section>
     </div>
   </div>
-  <script src="js/script.js" async defer></script>
+
+  <script id="template-table-element" type="text/x-handlebars-template">
+    <table class="table-products">
+      <tbody>
+        {{#each links}}
+        <tr>
+          <td class="section-header">{{name}}
+          </td>
+          <td>
+            <a href="{{address}}" target="_blank" class="link">{{address}}</a>
+          </td>
+          <td class="table-products__btn">
+            <a href="#" class="icon-links" aria-label="links"></a>
+          </td>
+          <td class="table-products__btn">
+            <a href="#" class="icon-trash" aria-label="trash"></a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="js/script.js" async defer type="module"></script>
 </body>
 
 </html>

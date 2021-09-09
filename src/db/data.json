@@ -1,0 +1,85 @@
+{
+  "links": [
+    {
+      "links": [
+        {
+          "id": 1,
+          "name": "Sony",
+          "address": "http://www.sony.com"
+        },
+        {
+          "id": 2,
+          "name": "Youtube",
+          "address": "http://www.youtube.com"
+        },
+        {
+          "id": 3,
+          "name": "Allegro",
+          "address": "http://www.allegro.pl"
+        },
+        {
+          "id": 4,
+          "name": "Zalando",
+          "address": "http://www.zalando.com"
+        },
+        {
+          "id": 5,
+          "name": "Facebook",
+          "address": "http://www.facebook.com"
+        },
+        {
+          "id": 6,
+          "name": "Twitter",
+          "address": "http://www.twitter.com"
+        },
+        {
+          "id": 7,
+          "name": "Nebbia",
+          "address": "http://www.nebbia.bio"
+        },
+        {
+          "id": 8,
+          "name": "Blurax",
+          "address": "http://www.blurax.com"
+        }
+      ]
+    }
+  ],
+
+  "banners": [
+    {
+      "banners": [
+        {
+          "id": 1,
+          "name": "Banner main",
+          "address": "http://www.website.com/bannermain.gif"
+        },
+        {
+          "id": 2,
+          "name": "Sign up banner",
+          "address": "http://www.website.com/signup.gif"
+        },
+        {
+          "id": 3,
+          "name": "Banner left side",
+          "address": "http://www.website.com/leftside.gif"
+        },
+        {
+          "id": 4,
+          "name": "Vertical banner",
+          "address": "http://www.website.com/vert.gif"
+        },
+        {
+          "id": 5,
+          "name": "Front banner",
+          "address": "http://www.website.com/front.gif"
+        },
+        {
+          "id": 6,
+          "name": "Horizontal banner",
+          "address": "http://www.website.com/horizontal.gif"
+        }
+      ]
+    }
+  ]
+}

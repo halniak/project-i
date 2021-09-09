@@ -1,8 +1,9 @@
 .menu__elem {
+  transition: $transition;
+
   &__list__item > .notification__badge {
     left: 95%;
     top: 30%;
-    transition: all 0.3s;
   }
 
   &.expanded {
@@ -23,22 +24,8 @@
       transition: $transition;
       margin-block-start: 1 * $basesize;
       margin-block-end: 2 * $basesize;
-
-      .notification__badge {
-        left: 95%;
-        top: 30%;
-        transition: $transition;
-      }
     }
   }
-}
-
-#notification {
-  transition: $transition;
-}
-
-#wallet {
-  transition: $transition;
 }
 
 @media (min-width: 576px) {
@@ -63,6 +50,10 @@
 
       &__icon {
         aspect-ratio: 1;
+      }
+
+      [class*='icon-']:before {
+        left: 50%;
       }
 
       &__text {
@@ -147,13 +138,13 @@
           height: 6 * $basesize;
         }
 
-        [class*='icon-']:before {
-          right: 100%;
-          transform: translate(100%, -50%);
-        }
+        /* [class*='icon-']:before {
+          @include absolute-center;
+          left: 25%;
+        } */
 
         [id$='__toggler'] [class*='icon-']:before {
-          right: 0;
+          left: 60%;
           transform: translate(-10%, -50%);
           transition: $transition;
         }
