@@ -39,6 +39,8 @@
   }
 
   &__subsection {
+    display: flex;
+
     &.section-header {
       flex: 1 1 100%;
     }
