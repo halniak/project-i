@@ -49,15 +49,13 @@
       }
     }
 
-    > * {
+    > *:not(.avatar) {
       color: $color-primary-2;
-      height: inherit;
     }
 
     [class*='icon-']:before {
       @include absolute-center;
       left: 25%;
-      //transform: translate(100%, -50%);
     }
 
     &:not(#manager)::after {
@@ -118,10 +116,13 @@
 
 #manager {
   display: none;
+  height: fit-content;
   margin: 6 * $basesize 0;
 
   &.active {
-    display: initial;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 

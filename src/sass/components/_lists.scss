@@ -75,6 +75,10 @@ ul {
 }
 
 @media (min-width: 575px) {
+  ul {
+    padding: 0 2 * $basesize;
+  }
+
   table {
     transform: scale(0.9);
 

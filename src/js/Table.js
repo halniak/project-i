@@ -1,18 +1,17 @@
-import { elements, templates } from './settings.js';
+import { settings } from './script.js';
 import { utils } from './utils.js';
 
 class Table {
-  constructor(id, data) {
-    this.id = id;
+  constructor(tableContainer, data) {
     this.data = data;
-    this.renderRow();
+    this.container = tableContainer;
+    this.renderTable();
   }
 
-  renderRow() {
-    const generatedHTML = templates.tableElement(this.data);
+  renderTable() {
+    const generatedHTML = settings.templates.table(this.data);
     const element = utils.createDOMFromHTML(generatedHTML);
-    const tableContainer = elements.table.links;
-    tableContainer.appendChild(element);
+    this.container.appendChild(element);
   }
 }
 

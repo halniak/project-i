@@ -9,7 +9,7 @@
   &.expanded {
     &#wallet {
       > .menu__elem__list {
-        columns: 2 6 * $basesize;
+        columns: 2 4 * $basesize;
       }
 
       &__toggler [class*='icon-']:before {
@@ -35,7 +35,7 @@
     width: 100%;
     height: 6 * $basesize;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: $color-primary-1;
     z-index: 2;
 
     &__wrapper {
@@ -49,11 +49,17 @@
       border-bottom: 1px solid $color-primary-3;
 
       &__icon {
-        aspect-ratio: 1;
+        width: 6 * $basesize;
       }
 
       [class*='icon-']:before {
         left: 50%;
+      }
+
+      &__list {
+        position: absolute;
+        top: 6 * $basesize;
+        width: 100%;
       }
 
       &__text {
@@ -83,6 +89,19 @@
           font-weight: $font-semibold;
         }
       }
+
+      &.expanded > * {
+        border: none !important;
+      }
+
+      &.expanded::before {
+        background-color: $color-primary-2;
+        border: 1px solid $color-primary-3;
+        content: '';
+        height: 10rem;
+        position: absolute;
+        width: 100%;
+      }
     }
 
     &__fill {
@@ -94,6 +113,10 @@
     .menu__elem__icon > .notification__badge {
       top: 27%;
       left: 48%;
+    }
+
+    &::before {
+      height: 13 * $basesize;
     }
 
     #notification__toggler {
@@ -138,11 +161,6 @@
           height: 6 * $basesize;
         }
 
-        /* [class*='icon-']:before {
-          @include absolute-center;
-          left: 25%;
-        } */
-
         [id$='__toggler'] [class*='icon-']:before {
           left: 60%;
           transform: translate(-10%, -50%);
@@ -157,39 +175,6 @@
         > * {
           color: $color-primary-2;
         }
-
-        /* &__list__item > .notification__badge {
-          left: 95%;
-          top: 30%;
-          transition: all 0.3s;
-        }
-
-        &.expanded {
-          &#wallet {
-            > .menu__elem__list {
-              columns: 2 6 * $basesize;
-            }
-          }
-
-          #wallet__toggler [class*='icon-']:before {
-            transform: translate(-10%, -50%) scaleY(-1);
-            transition: $transition;
-          }
-
-          > ul {
-            opacity: 1;
-            max-height: 30 * $basesize;
-            transition: $transition;
-            margin-block-start: 1 * $basesize;
-            margin-block-end: 2 * $basesize;
-
-            & .notification__badge {
-              left: 95%;
-              top: 30%;
-              transition: $transition;
-            }
-          }
-        } */
       }
 
       &__elem::after {

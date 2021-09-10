@@ -56,7 +56,7 @@
           </div>
           <div class="text-btn sidebar__elem__text">Links</div>
         </div>
-        <div class="sidebar__elem" type="button">
+        <div id="btn-banners" class="sidebar__elem" type="button">
           <div class="sidebar__elem__icon" type="button">
             <i class="icon-banners"></i>
           </div>
@@ -80,8 +80,11 @@
           </div>
           <div class="text-btn sidebar__elem__text">Postback</div>
         </div>
-        <div id="manager" class="sidebar__elem sidebar__elem__border" type="button">
-          <div class="text-btn sidebar__elem__text">Your manager</div>
+        <div id="manager" class="sidebar__elem" type="button">
+          <div class="text-btn sidebar__elem__text">YOUR MANAGER</div>
+          <img class="avatar" src="images/manager.png" alt="manager avatar">
+          <div class="notification__badge active"></div>
+          <div class="text-btn sidebar__elem__text">Anna F.</div>
         </div>
         <div id="menu" class="menu">
           <div class="menu__elem menu__fill"></div>
@@ -154,6 +157,7 @@
       </nav>
     </div>
     <div class="main active">
+
       <section id="general" class="page row margin-tb main__elem active">
         <div class="page__header padding-tb padding-lr">
           general statistic
@@ -233,6 +237,7 @@
           </div>
         </div>
       </section>
+
       <section id="links" class="page row margin-tb main__elem">
         <div class="page__header padding-tb padding-lr">
           links
@@ -244,13 +249,25 @@
           + add new
         </button>
       </section>
+
+      <section id="banners" class="page row margin-tb main__elem">
+        <div class="page__header padding-tb padding-lr">
+          banners
+        </div><button class="btn btn-secondary margin-tb" type="button">
+          + add new
+        </button>
+        <div id="table-banners" class="page__section"></div>
+        <button class="btn btn-secondary margin-tb" type="button">
+          + add new
+        </button>
+      </section>
     </div>
   </div>
 
-  <script id="template-table-element" type="text/x-handlebars-template">
+  <script id="template-table" type="text/x-handlebars-template">
     <table class="table-products">
       <tbody>
-        {{#each links}}
+        {{#each record}}
         <tr>
           <td class="section-header">{{name}}
           </td>

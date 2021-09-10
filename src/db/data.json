@@ -1,7 +1,7 @@
 {
-  "links": [
+  "tableData": [
     {
-      "links": [
+      "record": [
         {
           "id": 1,
           "name": "Sony",
@@ -43,12 +43,9 @@
           "address": "http://www.blurax.com"
         }
       ]
-    }
-  ],
-
-  "banners": [
+    },
     {
-      "banners": [
+      "record": [
         {
           "id": 1,
           "name": "Banner main",

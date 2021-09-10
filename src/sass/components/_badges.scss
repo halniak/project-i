@@ -13,6 +13,21 @@
   }
 }
 
+.avatar {
+  border-radius: 50%;
+  width: 6 * $basesize;
+  height: 6 * $basesize;
+  object-fit: cover;
+  margin: 2 * $basesize 2 * $basesize 0 0;
+
+  & + .notification__badge {
+    background-color: $color-positive-active;
+    transform: scale(1.5);
+    left: 4.5 * $basesize;
+    bottom: 5 * $basesize;
+  }
+}
+
 @media (max-width: 767px) {
   $basesize: 0.44rem;
 
