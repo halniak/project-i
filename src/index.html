@@ -44,7 +44,7 @@
           <div class="text-btn sidebar__elem__text">General
           </div>
         </div>
-        <div class="sidebar__elem" type="button">
+        <div id="details" class="sidebar__elem" type="button">
           <div class="sidebar__elem__icon" type="button">
             <i class="icon-details"></i>
           </div>
@@ -62,19 +62,19 @@
           </div>
           <div class="text-btn sidebar__elem__text">Banners</div>
         </div>
-        <div class="sidebar__elem" type="button">
+        <div id="btn-personal-data" class="sidebar__elem" type="button">
           <div class="sidebar__elem__icon" type="button">
             <i class="icon-personaldata"></i>
           </div>
           <div class="text-btn sidebar__elem__text">Personal data</div>
         </div>
-        <div class="sidebar__elem" type="button">
+        <div id="btn-payout" class="sidebar__elem" type="button">
           <div class="sidebar__elem__icon" type="button">
             <i class="icon-payout"></i>
           </div>
           <div class="text-btn sidebar__elem__text">Payout</div>
         </div>
-        <div class="sidebar__elem sidebar__elem__border" type="button">
+        <div id="btn-postback" class="sidebar__elem sidebar__elem__border" type="button">
           <div class="sidebar__elem__icon" type="button">
             <i class="icon-postback"></i>
           </div>
@@ -158,7 +158,7 @@
     </div>
     <div class="main active">
 
-      <section id="general" class="page row margin-tb main__elem active">
+      <section id="general" class="page row margin-tb main__elem">
         <div class="page__header padding-tb padding-lr">
           general statistic
         </div>
@@ -214,7 +214,7 @@
             </tbody>
           </table>
         </div>
-        <div class="page__section">
+        <div id="general__chart" class="page__section">
           <p class="page__subsection section-header">Earnings chart</p>
           <div class="page__subsection">
             <div id="btn-tab__signups" class="btn btn-tab padding-l-3">
@@ -244,7 +244,7 @@
         </div><button class="btn btn-secondary margin-tb" type="button">
           + add new
         </button>
-        <div id="table-links" class="page__section"></div>
+        <div id="table-links" class="page__section table"></div>
         <button class="btn btn-secondary margin-tb" type="button">
           + add new
         </button>
@@ -253,13 +253,94 @@
       <section id="banners" class="page row margin-tb main__elem">
         <div class="page__header padding-tb padding-lr">
           banners
-        </div><button class="btn btn-secondary margin-tb" type="button">
-          + add new
-        </button>
-        <div id="table-banners" class="page__section"></div>
+        </div>
         <button class="btn btn-secondary margin-tb" type="button">
           + add new
         </button>
+        <div id="table-banners" class="page__section table"></div>
+        <button class="btn btn-secondary margin-tb" type="button">
+          + add new
+        </button>
+      </section>
+
+      <section id="details" class="page row margin-tb main__elem">
+        <div class="page__header padding-tb padding-lr">
+          under construction
+        </div>
+      </section>
+
+      <section id="personal-data" class="page row margin-tb main__elem active">
+        <div class="page__header padding-tb padding-lr">
+          personal data
+        </div>
+        <div class="page__section margin-0 padding-0">
+          <form action="" method="POST">
+            <div class="page__subsection">
+              <div class="field">
+                <label>Name</label>
+                <input type="text" name="user-name" placeholder="John">
+              </div>
+              <div class="field">
+                <label>Surname</label>
+                <input type="text" name="user-surname" placeholder="Smith">
+              </div>
+              <div class="field">
+                <label>E-mail</label>
+                <input type="email" name="email-address" placeholder="john.smith@this.it" required>
+              </div>
+              <div class="field">
+                <label for="phone-number">Phone number</label>
+                <input type="number" name="phone-number" placeholder="+123 456 789">
+              </div>
+            </div>
+            <div class="page__subsection">
+              <div class="field">
+                <label>Skype</label>
+                <input type="text" name="skype">
+              </div>
+              <div class="field">
+                <label>ICQ</label>
+                <input type="text" name="icq">
+              </div>
+              <div class="field">
+                <label>MSN</label>
+                <input type="text" name="msn">
+              </div>
+            </div>
+            <div class="page__subsection">
+              <div class="field">
+                <label>Wallet</label>
+                <input type="text" name="wallet">
+              </div>
+            </div>
+            <div class="page__subsection">
+              <div class="field">
+                <label>Password</label>
+                <input type="password" name="password" required>
+              </div>
+              <div class="field">
+                <label>Repeat</label>
+                <input type="password" name="password" required>
+              </div>
+            </div>
+
+            <button class="btn btn-secondary margin-tb">
+              save
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section id="payout" class="page row margin-tb main__elem">
+        <div class="page__header padding-tb padding-lr">
+          under construction
+        </div>
+      </section>
+
+      <section id="postback" class="page row margin-tb main__elem">
+        <div class="page__header padding-tb padding-lr">
+          under construction
+        </div>
       </section>
     </div>
   </div>

@@ -45,8 +45,20 @@
   }
 }
 
+#personal-data {
+  & .page__subsection {
+    border-bottom: 1px solid $color-primary-3;
+    padding: 2 * $basesize 0;
+  }
+}
+
 @media (max-width: 575px) {
   .page__section {
     padding: 2 * $basesize 5%;
+
+    &.table {
+      padding: 0;
+      margin: -8 * $basesize;
+    }
   }
 }

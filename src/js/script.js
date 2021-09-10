@@ -2,7 +2,6 @@ import { utils } from './utils.js';
 import Table from './Table.js';
 import Settings from './settings.js';
 
-
 export const app = {
   init: function () {
     settings.elements.sidebar.hamburger.checked = true;
@@ -29,7 +28,6 @@ export const app = {
 
     app.initData();
     app.adjustMenu();
-    //app.adjustTable();
     app.addListeners();
     app.updateDateRange(initDates);
   },
@@ -78,7 +76,6 @@ export const app = {
 
     window.addEventListener('resize', function () {
       app.adjustMenu();
-      //app.adjustTable();
     });
   },
 
@@ -94,23 +91,6 @@ export const app = {
       settings.elements.managerContainer.classList.add('active');
     }
   },
-
-  /*   adjustTable: function () {
-      if (window.innerWidth < 575) {
-        for (let i = 0; i < settings.elements.table.rowBtn.length; i++) {
-          console.log(settings.elements.table.rowBtn[i]);
-
-          settings.elements.table.rowHeader.appendChild(btn);
-        }
-      }
-      else {
-        for (const btn in settings.elements.table.rowBtn) {
-          console.log(btn);
-          console.log(settings.elements.table.rowBtn);
-          settings.elements.table.rowHeader.appendChild(btn);
-        }
-      }
-    }, */
 
   toggleMenuSection: function () {
     this.classList.toggle('expanded');

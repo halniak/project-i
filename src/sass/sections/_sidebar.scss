@@ -2,10 +2,12 @@
   @include menu($basesize);
   @include sidebar($basesize);
 
-  height: 100vh;
+  height: 100%;
   flex-direction: column;
   z-index: 2;
   transition: $transition;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 
   &__toggler {
     @include sidebar($basesize);
@@ -177,7 +179,7 @@
   }
 }
 
-@media (max-width: 575px) {
+/* @media (max-width: 575px) {
   $basesize: 0.44rem;
 
   .sidebar {
@@ -191,3 +193,4 @@
     }
   }
 }
+ */
