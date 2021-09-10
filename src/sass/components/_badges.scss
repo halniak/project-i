@@ -20,7 +20,7 @@
   object-fit: cover;
   margin: 2 * $basesize 2 * $basesize 0 0;
 
-  & + .notification__badge {
+  + .notification__badge {
     background-color: $color-positive-active;
     transform: scale(1.5);
     left: 4.5 * $basesize;
