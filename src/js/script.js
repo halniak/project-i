@@ -11,7 +11,7 @@ export const app = {
 
     const initDates = {
       0: utils.dateToStr(this.minDate),
-      1: utils.dateToStr(this.maxDate),
+      1: utils.dateToStr(this.maxDate)
     };
 
     // eslint-disable-next-line no-undef
@@ -23,7 +23,7 @@ export const app = {
         const dateArray = dateStr.split(' to ');
         const dateObj = Object.assign({}, dateArray);
         app.updateDateRange(dateObj);
-      },
+      }
     });
 
     app.initData();
@@ -45,13 +45,9 @@ export const app = {
   },
 
   initTables: function (tableData) {
-    new Table(
-      settings.elements.table.links,
-      tableData[0]);
+    new Table(settings.elements.table.links, tableData[0]);
 
-    new Table(
-      settings.elements.table.banners,
-      tableData[1]);
+    new Table(settings.elements.table.banners, tableData[1]);
   },
 
   addListeners: function () {
@@ -63,7 +59,9 @@ export const app = {
     settings.elements.sidebar.toggler.addEventListener('click', function sidebarToggle(event) {
       event.preventDefault();
 
-      settings.elements.sidebar.hamburger.checked ? settings.elements.sidebar.hamburger.checked = false : settings.elements.sidebar.hamburger.checked = true;
+      settings.elements.sidebar.hamburger.checked
+        ? (settings.elements.sidebar.hamburger.checked = false)
+        : (settings.elements.sidebar.hamburger.checked = true);
       settings.elements.sidebar.container.classList.toggle('active');
       settings.elements.pageBody.classList.toggle('active');
     });
@@ -84,8 +82,7 @@ export const app = {
       settings.elements.sidebarContainer.appendChild(settings.elements.menuContainer);
       settings.elements.btnQuit.innerHTML = 'Logout'; /* separate content from functionality! */
       settings.elements.managerContainer.classList.remove('active');
-    }
-    else {
+    } else {
       settings.elements.headerContainer.appendChild(settings.elements.menuContainer);
       settings.elements.btnQuit.innerHTML = '';
       settings.elements.managerContainer.classList.add('active');
@@ -111,8 +108,7 @@ export const app = {
           page.classList.toggle('active');
           this.classList.toggle('active');
         }
-      }
-      else {
+      } else {
         page.classList.remove('active');
       }
     }
@@ -129,7 +125,7 @@ export const app = {
       settings.elements.input.startDate.innerHTML = dates[0];
       settings.elements.input.endDate.innerHTML = dates[1];
     }
-  },
+  }
 };
 
 export const settings = new Settings();

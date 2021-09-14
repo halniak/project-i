@@ -11,7 +11,7 @@ class Settings {
       input: {
         calendar: '.calendar [class*="icon-calendar"]',
         startDate: '#start-date',
-        endDate: '#end-date',
+        endDate: '#end-date'
       },
       menu: '#menu',
       pageBody: '.main',
@@ -20,7 +20,7 @@ class Settings {
       sidebar: {
         container: '.sidebar',
         toggler: '.sidebar__toggler',
-        logo: '.sidebar__togger__logo',
+        logo: '.sidebar__togger__logo'
       },
       header: '#header',
       btnQuit: '#quit-label',
@@ -28,7 +28,7 @@ class Settings {
       wallet: '#wallet',
       notification: {
         element: '#notification',
-        badge: '#notification__toggler > .notification__badge',
+        badge: '#notification__toggler > .notification__badge'
       },
       menuToggleSections: '.menu__elem.expanded',
       table: {
@@ -36,11 +36,11 @@ class Settings {
         links: '#table-links',
         row: 'tr',
         rowHeader: 'tr .section-header',
-        rowBtn: '.table-products__btn',
+        rowBtn: '.table-products__btn'
       },
       templateOf: {
-        table: '#template-table',
-      },
+        table: '#template-table'
+      }
     };
   }
 
@@ -49,7 +49,7 @@ class Settings {
       input: {
         calendar: document.querySelector(this.select.input.calendar),
         startDate: document.querySelector(this.select.input.startDate),
-        endDate: document.querySelector(this.select.input.endDate),
+        endDate: document.querySelector(this.select.input.endDate)
       },
       menuContainer: document.querySelector(this.select.menu),
       menuToggleSections: document.querySelector(this.select.menuToggleSections),
@@ -65,7 +65,7 @@ class Settings {
         container: document.querySelector(this.select.sidebar.container),
         toggler: document.querySelector(this.select.sidebar.toggler),
         logo: document.querySelector(this.select.sidebar.logo),
-        hamburger: document.getElementById('check'),
+        hamburger: document.getElementById('check')
       },
       pageTogglers: document.querySelectorAll(this.select.pageTogglers),
       pages: document.querySelectorAll(this.select.pages),
@@ -74,27 +74,26 @@ class Settings {
         links: document.querySelector(this.select.table.links),
         row: document.querySelector(this.select.table.row),
         rowHeader: document.querySelector(this.select.table.rowHeader),
-        rowBtn: document.querySelectorAll(this.select.table.rowBtn),
+        rowBtn: document.querySelectorAll(this.select.table.rowBtn)
       },
       templateOf: {
-        table: document.querySelector(this.select.templateOf.table),
-      },
+        table: document.querySelector(this.select.templateOf.table)
+      }
     };
   }
 
   initUrlSettings() {
     this.urlSettings = {
-      url: '//localhost:3131',
-      dataEndpoint: 'tableData',
+      url: '//' + window.location.hostname + (window.location.hostname == 'localhost' ? ':3131' : ''),
+      dataEndpoint: 'tableData'
     };
   }
 
   initTemplates() {
     this.templates = {
-      table: Handlebars.compile(this.elements.templateOf.table.innerHTML),
+      table: Handlebars.compile(this.elements.templateOf.table.innerHTML)
     };
   }
-
 }
 
 export default Settings;
