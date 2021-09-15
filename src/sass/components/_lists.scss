@@ -76,6 +76,11 @@ ul {
   }
 }
 
+#general__chart {
+  display: block;
+  margin: 0 auto;
+}
+
 @media (min-width: 575px) {
   ul {
     padding: 0 2 * $basesize;
@@ -115,6 +120,10 @@ ul {
 
   td:first-of-type {
     border-bottom: 1px solid $color-primary-2;
+  }
+
+  #general__chart {
+    display: none;
   }
 }
 
